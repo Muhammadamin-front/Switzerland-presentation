@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ChartPie, Coins, Factory, Flag, FlaskConical, History, House, Mountain, Sunrise, TrendingDown, type LucideIcon } from "lucide-react"
+import { ChartPie, Factory, Flag, FlaskConical, History, House, Landmark, Mountain, Sunrise, TrendingDown, type LucideIcon } from "lucide-react"
 import { PRESENTER, SECTIONS, type SectionId } from "@/lib/data"
 import { onScrollY, scrollToId } from "@/lib/scroll"
 import { cn } from "@/lib/utils"
@@ -10,7 +10,7 @@ const ICONS: Record<SectionId, LucideIcon> = {
   helvetia: Mountain,
   raqamlar: ChartPie,
   tarix: History,
-  frank: Coins,
+  siyosat: Landmark,
   sanoat: Factory,
   innovatsiya: FlaskConical,
   muammolar: TrendingDown,
@@ -46,8 +46,8 @@ export function Rail() {
   return (
     <>
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-[var(--rail)] flex-col border-r border-mist bg-paper lg:flex">
-        <a href="#kirish" onClick={(e) => (e.preventDefault(), scrollToId("kirish"))} className="flex flex-col items-center gap-3 px-6 pt-8 pb-7">
-          <Seal className="size-16" />
+        <a href="#kirish" onClick={(e) => (e.preventDefault(), scrollToId("kirish"))} className="flex flex-col items-center gap-2.5 px-6 pt-6 pb-5">
+          <Seal className="size-12" />
           <span className="label text-depth">Shveytsariya</span>
           <span className="accent -mt-2 text-base text-dilute">Schweizer Wirtschaft</span>
         </a>
@@ -87,7 +87,7 @@ export function Rail() {
           </ul>
         </nav>
 
-        <div className="mx-5 border-t border-mist py-5">
+        <div className="mx-5 border-t border-mist py-4">
           <div className="flex items-baseline justify-between">
             <span className="label text-dilute">Bo‘lim</span>
             <span className="tnum text-sm text-depth">

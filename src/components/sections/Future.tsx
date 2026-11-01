@@ -11,10 +11,10 @@ export function Future() {
         <div data-stop className="slide wrap-page py-20">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
             <Inscribed accent="Il futuro">
-              <WordRise as="h2" className="section-title text-depth" text="Yangi o‘sish manbalari" />
+              <WordRise as="h2" className="section-title text-depth" text="Siyosat kun tartibi" />
             </Inscribed>
             <p className="lede" data-rev style={delay(120)}>
-              Shveytsariya Yevropa bilan yangi kelishuv, AQSh bilan savdo bitimi, sun’iy intellekt, yashil energiya va hayot fanlariga tikmoqda.
+              Hukumat va xalq oldidagi beshta qaror: Yevropa bilan yangi kelishuv, AQSh bilan savdo bitimi, sun’iy intellekt, yashil energiya va hayot fanlari.
             </p>
           </div>
 

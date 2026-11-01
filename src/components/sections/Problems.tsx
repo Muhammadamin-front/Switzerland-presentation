@@ -16,7 +16,7 @@ export function Problems() {
               <WordRise as="h2" className="section-title text-depth" text="Muvaffaqiyatning narxi" />
             </Inscribed>
             <p className="lede relative mt-6 max-w-[46ch]" data-rev style={delay(160)}>
-              Qariyotgan aholi, AQSh bojlari va haddan tashqari kuchli frank — Shveytsariya bugun yechayotgan uchta masala. Past qarz esa uning eng katta zaxirasi.
+              Qariyotgan aholi, AQSh bojlari va haddan tashqari kuchli frank — siyosatchilar bugun yechayotgan uchta masala. Past qarz esa ularning eng katta zaxirasi.
             </p>
           </div>
         </FlowField>

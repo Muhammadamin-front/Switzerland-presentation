@@ -1,17 +1,17 @@
-# Nutq matni — «Shveytsariya iqtisodiyoti»
+# Nutq matni — «Shveytsariya iqtisodiyoti» («Iqtisodiyotda siyosat» fani)
 
-Umumiy vaqt: ~13–14 daqiqa. **[→]** — klaviaturada o‘ng strelka (yoki pultdagi «keyingi») tugmasini bosish joyi.
+Umumiy vaqt: ~15 daqiqa. **[→]** — klaviaturada o‘ng strelka (yoki pultdagi «keyingi») tugmasini bosish joyi.
 Qalin yozilgan raqamlar ekranda ham ko‘rinadi — ularni aynan aytib o‘ting.
 
 ---
 
 ## 1. Kirish — 0:45
 
-Assalomu alaykum, hurmatli ustoz va do‘stlar. Bugun men sizga slaydlar o‘rniga shu veb-sayt orqali Shveytsariya iqtisodiyoti haqida gapirib beraman.
+Assalomu alaykum, hurmatli ustoz va do‘stlar. Men Farg‘ona davlat texnika universiteti, Ishlab chiqarishda boshqaruv fakulteti, 85-25 I guruh talabasi Xasanboyev Sardorman. «Iqtisodiyotda siyosat» fanidan Shveytsariya iqtisodiyoti va uning ortidagi iqtisodiy siyosat haqida animatsiyali taqdimot tayyorladim.
 
 Tepada mamlakatning to‘rtta nomi: nemischa *Schweiz*, fransuzcha *Suisse*, italyancha *Svizzera* va romanshcha *Svizra* — chunki Shveytsariyada to‘rtta rasmiy til bor. *(Sichqonchani ekranda yurgizib, bo‘yoqni aralashtiring; bosilsa yangi tomchi tushadi.)*
 
-Asosiy savolimiz: dengizi ham, neft-gazi ham yo‘q tog‘li mamlakat qanday qilib dunyoning eng boy davlatlaridan biriga aylandi? **[→]**
+Asosiy savolimiz: dengizi ham, neft-gazi ham yo‘q tog‘li mamlakat qanday qilib dunyoning eng boy davlatlaridan biriga aylandi — va bunda davlat siyosati qanday rol o‘ynadi? **[→]**
 
 ## 2. Helvetia — 1:00
 
@@ -52,15 +52,23 @@ Boshqa asosiy raqamlar:
 
 O‘sish sur’atiga qarang: Shveytsariya yiliga o‘rtacha atigi **1,6–2,5%** o‘sgan. O‘zbekiston 2025-yilda **7,7%** o‘sdi. Lekin boy mamlakat uchun bu normal — uning siri tezlikda emas, deyarli hech qachon yiqilmaslikda. **[→]**
 
-## 5. Frank — xavfsiz boshpana — 1:30
+## 5. Iqtisodiy siyosat — 2:30 (fanning asosiy qismi)
+
+Shveytsariya muvaffaqiyati tasodif emas — u oldindan ma’lum qoidalarga tayangan siyosat natijasi. Olti vosita:
+1. **Pul-kredit siyosati** — Milliy bank hukumatdan mustaqil, yagona maqsadi narx barqarorligi (inflyatsiya 0–2%). Hozir stavka **0%**.
+2. **Fiskal siyosat** — «qarz tormozi»: 2001-yilda xalq referendumda ~85% ovoz bilan qabul qilgan, byudjet sikl davomida daromaddan ko‘p sarflamaydi. Qarz — atigi **~40%** YaIM.
+3. **Soliq siyosati** — 26 kanton o‘z stavkasini belgilaydi va raqobatlashadi; 2024-yildan yirik kompaniyalarga OECD minimal **15%** soliq.
+4. **Savdo siyosati** — 2024-yildan sanoat tovarlari importiga bojlar bir tomonlama bekor qilindi; 30 dan ortiq erkin savdo bitimi.
+5. **Ta’lim va mehnat siyosati** — dual kasb ta’limi; ishsizlik **2,8%**.
+6. **Tashqi iqtisodiy siyosat** — betaraflik, YeI’ga a’zo emas, lekin ikki tomonlama kelishuvlar orqali uning bozoriga kiradi. **[→]**
 
 *(Sarlavha pastga aylantirilganda bulutga cho‘kkandek yo‘qoladi.)*
 
-Dunyoda inqiroz boshlansa, investorlar pulini frankka o‘tkazadi. Bu ishonch belgisi, lekin eksportchilar uchun bosh og‘riq: frank qimmatlasa, shveytsar soati va dorisi chet elda qimmatlashadi. **[→]**
+Endi pul-kredit siyosatini yaqinroq ko‘ramiz. Dunyoda inqiroz boshlansa, investorlar pulini frankka o‘tkazadi. Bu ishonch belgisi, lekin eksportchilar uchun bosh og‘riq: frank qimmatlasa, shveytsar soati va dorisi chet elda qimmatlashadi. **[→]**
 
 Uch burilish: **2011** — Milliy bank «1 evro kamida 1,20 frank» deb chegara qo‘ydi. **2015** — chegarani olib tashladi, foiz manfiy bo‘ldi. **2025–2026** — inflyatsiya deyarli nol, shuning uchun stavka **0%**. **[→]**
 
-Pul qayerdan keladi? Shveytsar pensiyasi uch ustunga tayanadi: **I** — davlat pensiyasi, **II** — ish joyidagi majburiy kasbiy pensiya, **III** — shaxsiy jamg‘arma. Bu jamg‘armalar banklar orqali investitsiyaga aylanadi. **[→]**
+Ijtimoiy siyosat: davlat qonun bilan belgilagan pensiya tizimi uch ustunga tayanadi: **I** — davlat pensiyasi, **II** — ish joyidagi majburiy kasbiy pensiya, **III** — shaxsiy jamg‘arma. Bu jamg‘armalar banklar orqali investitsiyaga aylanadi. **[→]**
 
 ## 6. Sanoat: Swiss Made — 2:00
 
@@ -88,7 +96,7 @@ Zanjirni chapdan o‘ngga o‘qiymiz: xomashyo yo‘q → bilimga tikiladi → t
 
 Innovatsiya nima beradi: qimmat frankka bardosh, yuqori ish haqi, xalqaro shtab-kvartiralar va universitetdan chiqqan startaplar. **[→]**
 
-## 8. Muammolar — 1:45
+## 8. Muammolar va siyosiy javoblar — 1:45
 
 Har bir muvaffaqiyatning narxi bor. **[→]**
 
@@ -96,17 +104,17 @@ Birinchisi — qarish. 2025-yil oxirida tarixda ilk bor 65 yoshdan kattalar 20 y
 
 Lekin qarz muammo emas: Yaponiyada **205%**, Italiyada **137%**, Shveytsariyada atigi **~40%**. Sababi — 2003-yildan amaldagi «qarz tormozi». **[→]**
 
-Ikkita yangi bosh og‘riq: **AQSh bojlari** — 2025-yil avgustida **39%**, noyabrda kelishuv bilan **15%**; 2026-yil fevralida AQSh Oliy sudi bu bojlarni bekor qildi, lekin doimiy bitim hali yo‘q. Va **juda kuchli frank** — stavka **0%** da. **[→]**
+Ikkita yangi bosh og‘riq: **AQSh bojlari** — 2025-yil avgustida **39%**, noyabrda kelishuv bilan **15%**; 2026-yil fevralida AQSh Oliy sudi bu bojlarni bekor qildi, lekin doimiy bitim hali yo‘q. Hukumat javobi — qasos bojlari emas, diplomatiya. Va **juda kuchli frank** — Milliy bankning javobi: stavka **0%**, kerak bo‘lsa valyuta bozoriga aralashadi. **[→]**
 
-## 9. Kelajak — 1:00
+## 9. Siyosat kun tartibi — 1:00
 
-Shveytsariya beshta yo‘nalishga tikmoqda: Yevropa bilan yangi paket, AQSh bilan savdo bitimi, ochiq sun’iy intellekt, energiya strategiyasi 2050 va hayot fanlari. **[→]**
+Hukumat va xalq oldida beshta qaror turibdi: Yevropa bilan yangi paket, AQSh bilan savdo bitimi, ochiq sun’iy intellekt, energiya strategiyasi 2050 va hayot fanlari. **[→]**
 
 ## 10. Xulosa — 1:00
 
-Uchta xulosa:
-1. Resurssiz mamlakat bilim, aniqlik va ishonch hisobiga boy bo‘ldi.
-2. Barqarorlik — eng katta kapital, lekin kuchli frankning narxi bor.
-3. O‘zbekiston uchun saboq: dual kasb ta’limi, innovatsiya va institutlarga ishonch — tabiiy boylikdan ham muhimroq. **[→]**
+Uchta siyosiy xulosa:
+1. Mustaqil markaziy bank va past inflyatsiya — ishonchning asosi; lekin kuchli frankning narxi bor.
+2. Qoidaga asoslangan byudjet va kantonlar soliq raqobati qarzni past, biznesni faol ushlab turadi.
+3. O‘zbekiston uchun saboq: ochiq savdo, dual kasb ta’limi va o‘zgarmas, oldindan aytib bo‘ladigan qoidalar — tabiiy boylikdan ham muhimroq. **[→]**
 
 **Rahmat!** Danke, merci, grazie, grazia. Savollaringiz bo‘lsa — marhamat.

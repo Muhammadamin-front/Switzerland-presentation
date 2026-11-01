@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 import { WordRise } from "@/components/ui/word-rise"
-import { FRANC, PILLARS } from "@/lib/data"
+import { FRANC, PILLARS, POLICY } from "@/lib/data"
 import { registerStage } from "@/lib/scroll"
 import { delay } from "@/lib/utils"
 
@@ -13,7 +13,37 @@ export function Franc() {
   useEffect(() => (stageRef.current ? registerStage(stageRef.current) : undefined), [])
 
   return (
-    <section id="frank" aria-label="Frank: xavfsiz boshpana">
+    <section id="siyosat" aria-label="Iqtisodiy siyosat">
+      {/* The policy toolkit: who steers each lever, by which rule, with what result today */}
+      <div data-stop className="slide bg-paper py-10">
+        <div className="wrap-page">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:items-end">
+            <WordRise as="h2" className="text-[clamp(2.2rem,3.8vw,3.6rem)] leading-[1.05] font-light tracking-[-0.02em] text-depth" text="Iqtisodiy siyosatning olti vositasi" />
+            <p className="lede" data-rev style={delay(120)}>
+              Shveytsariya muvaffaqiyati tasodif emas — u oldindan ma’lum qoidalarga tayangan siyosat natijasi. Har bir vositani kim boshqaradi va qaysi qoida
+              bilan?
+            </p>
+          </div>
+          <ol className="mt-8 grid gap-px border-y border-mist bg-mist md:grid-cols-2 xl:grid-cols-3">
+            {POLICY.map((p, i) => (
+              <li key={p.area} className="flex flex-col bg-paper py-5 md:px-6" data-rev style={delay(70 * i)}>
+                <div className="flex items-baseline gap-3">
+                  <span className="tnum text-sm text-seal">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="text-[1.35rem] leading-tight font-light text-depth">{p.area}</h3>
+                </div>
+                <p className="label mt-3 !tracking-[0.12em] text-dilute">{p.who}</p>
+                <p className="mt-3 flex-1 text-[0.93rem] leading-relaxed text-depth/85">{p.rule}</p>
+                <p className="mt-4 flex items-center gap-3 text-[0.93rem] text-depth">
+                  <span aria-hidden="true" className="h-px w-6 shrink-0 bg-seal" />
+                  {p.now}
+                </p>
+              </li>
+            ))}
+          </ol>
+          <p className="note mt-5">Manbalar: SNB 2026; XVF WEO 2026-oktabr; SECO 2024–2025; Federal kanslerlik (2001, 2023 referendumlari); EDA 2026.</p>
+        </div>
+      </div>
+
       <div ref={stageRef} data-stop data-stops="0.04" className="stage h-[260svh]">
         <div className="stage__pin grid place-items-center bg-paper">
           <div className="wrap-page text-center">
@@ -34,7 +64,7 @@ export function Franc() {
 
       <div data-stop className="slide bg-paper py-20">
         <div className="wrap-page">
-          <WordRise as="h2" className="text-[clamp(2rem,3.6vw,3.4rem)] leading-tight font-light text-depth" text="Frank tarixidagi uch burilish" />
+          <WordRise as="h2" className="text-[clamp(2rem,3.6vw,3.4rem)] leading-tight font-light text-depth" text="Pul-kredit siyosati: frank tarixidagi uch burilish" />
           <div className="mt-14 grid gap-px border-y border-mist bg-mist md:grid-cols-3">
             {FRANC.map((c, i) => (
               <article key={c.title} className="bg-paper py-9 md:px-8 md:first:pl-0 md:last:pr-0" data-rev style={delay(90 * i)}>
@@ -51,9 +81,9 @@ export function Franc() {
       <div data-stop className="slide bg-wash py-20">
         <div className="wrap-page">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
-            <WordRise as="h2" className="section-title text-depth" text="Uch ustunli pensiya" />
+            <WordRise as="h2" className="section-title text-depth" text="Ijtimoiy siyosat: uch ustunli pensiya" />
             <p className="lede" data-rev style={delay(120)}>
-              Shveytsarlar keksalik uchun uch ustunda pul yig‘adi. Bu jamg‘armalar banklar va sug‘urta kompaniyalari orqali investitsiyaga aylanadi — moliya
+              Davlat qonun bilan belgilagan tizim: shveytsarlar keksalik uchun uch ustunda pul yig‘adi. Bu jamg‘armalar banklar va sug‘urta kompaniyalari orqali investitsiyaga aylanadi — moliya
               sohasining ichki «yoqilg‘isi» ham shu.
             </p>
           </div>
@@ -77,7 +107,7 @@ export function Franc() {
           </div>
 
           <p className="mt-16 max-w-[62ch] border-t border-feather/50 pt-8 text-[clamp(1.1rem,1.5vw,1.35rem)] leading-relaxed font-light text-depth" data-rev>
-            Xulosa: kuchli frank, past inflyatsiya va katta jamg‘armalar — Shveytsariyani «dunyoning seyfi»ga aylantirgan uchta omil.
+            Siyosat xulosasi: mustaqil markaziy bank, past inflyatsiya va majburiy jamg‘arma — Shveytsariyani «dunyoning seyfi»ga aylantirgan uchta qaror.
           </p>
         </div>
       </div>

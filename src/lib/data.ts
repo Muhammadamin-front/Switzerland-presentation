@@ -3,9 +3,12 @@
 
 /** Ismingiz va guruhingizni yozing — bo‘sh qolsa, ko‘rsatilmaydi. */
 export const PRESENTER = {
-  name: "",
-  group: "",
-  course: "Iqtisodiyot fanidan taqdimot",
+  name: "Xasanboyev Sardor",
+  group: "85-25 I guruh",
+  university: "Farg‘ona davlat texnika universiteti",
+  faculty: "Ishlab chiqarishda boshqaruv fakulteti",
+  subject: "Iqtisodiyotda siyosat",
+  course: "«Iqtisodiyotda siyosat» fanidan animatsiyali taqdimot",
 }
 
 export type SectionId =
@@ -13,7 +16,7 @@ export type SectionId =
   | "helvetia"
   | "raqamlar"
   | "tarix"
-  | "frank"
+  | "siyosat"
   | "sanoat"
   | "innovatsiya"
   | "muammolar"
@@ -26,7 +29,7 @@ export const SECTIONS: { id: SectionId; label: string; accent: string }[] = [
   { id: "helvetia", label: "Helvetia", accent: "Helvetia" },
   { id: "raqamlar", label: "Raqamlarda", accent: "Zahlen" },
   { id: "tarix", label: "Tarix", accent: "Histoire" },
-  { id: "frank", label: "Frank", accent: "Franken" },
+  { id: "siyosat", label: "Siyosat", accent: "Politik" },
   { id: "sanoat", label: "Sanoat", accent: "Swiss Made" },
   { id: "innovatsiya", label: "Innovatsiya", accent: "Innovation" },
   { id: "muammolar", label: "Muammolar", accent: "Défis" },
@@ -329,12 +332,12 @@ export const PROBLEMS = [
   {
     figure: "39% → 15%",
     title: "AQSh bojlari",
-    text: "2025-yil avgustida AQSh Shveytsariya tovarlariga 39% boj qo‘ydi — Yevropadagi eng yuqori stavka; noyabrdagi kelishuv bilan u 15% ga tushdi. 2026-yil fevralida AQSh Oliy sudi bu bojlarni bekor qildi, lekin boj siyosati hamon noaniq — doimiy savdo bitimi bo‘yicha muzokaralar davom etmoqda.",
+    text: "2025-yil avgustida AQSh Shveytsariya tovarlariga 39% boj qo‘ydi — Yevropadagi eng yuqori stavka; noyabrdagi kelishuv bilan u 15% ga tushdi. 2026-yil fevralida AQSh Oliy sudi bu bojlarni bekor qildi, lekin boj siyosati hamon noaniq. Hukumat javobi — qasos bojlari emas, diplomatiya va doimiy savdo bitimi bo‘yicha muzokara.",
   },
   {
     figure: "0%",
     title: "Juda kuchli frank",
-    text: "Inqiroz bo‘lsa, pul frankka qochadi — u qimmatlaydi va eksportchilar zarar ko‘radi. Narxlar deyarli o‘smagani uchun SNB stavkasi 2025-yil iyunidan beri 0%.",
+    text: "Inqiroz bo‘lsa, pul frankka qochadi — u qimmatlaydi va eksportchilar zarar ko‘radi. SNB javobi: 2025-yil iyunidan stavka 0%, kerak bo‘lsa valyuta bozoriga aralashishga tayyor.",
   },
 ]
 
@@ -367,9 +370,49 @@ export const FUTURE = [
 ]
 
 export const CONCLUSIONS = [
-  "Dengizi va qazilma boyligi yo‘q tog‘li mamlakat bilim, aniqlik va ishonch hisobiga dunyoning eng boy iqtisodiyotlaridan biriga aylandi.",
-  "Barqarorlik — eng katta kapital: betaraflik, past qarz va kuchli frank pulni jalb qiladi, lekin eksportchilarga bosim beradi.",
-  "O‘zbekiston uchun saboq: dual kasb ta’limi, innovatsiya va institutlarga ishonch — tabiiy boylikdan ham muhimroq.",
+  "Mustaqil markaziy bank va past inflyatsiya — ishonchning asosi: frank dunyoning «xavfsiz boshpanasi»ga aylandi, lekin eksportga bosim beradi.",
+  "Qoidaga asoslangan byudjet (qarz tormozi) va kantonlar soliq raqobati davlat qarzini past, biznesni esa faol ushlab turadi.",
+  "O‘zbekiston uchun saboq: ochiq savdo, dual kasb ta’limi va o‘zgarmas, oldindan aytib bo‘ladigan qoidalar — tabiiy boylikdan ham muhimroq.",
+]
+
+/** Iqtisodiy siyosatning olti vositasi: kim boshqaradi, qaysi qoida, hozirgi natija. */
+export const POLICY = [
+  {
+    area: "Pul-kredit siyosati",
+    who: "Milliy bank (SNB) — hukumatdan mustaqil",
+    rule: "Yagona maqsad — narx barqarorligi: inflyatsiya 0–2% oralig‘ida. Kerak bo‘lsa frankni ushlab turish uchun valyuta bozoriga aralashadi.",
+    now: "Stavka 0% (SNB, 2026-sentabr)",
+  },
+  {
+    area: "Fiskal siyosat",
+    who: "Federal Kengash va parlament",
+    rule: "«Qarz tormozi»: 2001-yilgi referendumda ~85% ovoz bilan qabul qilingan, 2003-yildan sikl davomida xarajat daromaddan oshmaydi.",
+    now: "Davlat qarzi ~40% YaIM (XVF, 2025)",
+  },
+  {
+    area: "Soliq siyosati",
+    who: "26 kanton + federatsiya",
+    rule: "Har bir kanton o‘z stavkasini belgilaydi va raqobatlashadi. 2024-yildan yirik xalqaro kompaniyalarga OECD minimal 15% soliq qo‘llanadi.",
+    now: "2023-yil referendumida ~79% «ha»",
+  },
+  {
+    area: "Savdo siyosati",
+    who: "SECO — iqtisodiyot vazirligi",
+    rule: "2024-yil 1-yanvardan sanoat tovarlari importiga bojlar bir tomonlama bekor qilindi. Yevropa Ittifoqidan tashqari 30 dan ortiq erkin savdo bitimi.",
+    now: "Hindiston bilan bitim 2025-yil oktabrdan",
+  },
+  {
+    area: "Ta’lim va mehnat siyosati",
+    who: "Federatsiya, kantonlar va ish beruvchilar",
+    rule: "Dual kasb ta’limi va moslashuvchan mehnat bozori: kompaniyalar kadrni o‘zi tayyorlaydi, yoshlar ishsiz qolmaydi.",
+    now: "Ishsizlik 2,8% (SECO, 2025)",
+  },
+  {
+    area: "Tashqi iqtisodiy siyosat",
+    who: "Federal Kengash, xalq referendumi",
+    rule: "Betaraflik; Yevropa Ittifoqiga a’zo emas, lekin 1999-yildan ikki tomonlama kelishuvlar orqali uning ichki bozoriga kiradi.",
+    now: "Yangi paket imzolandi (2026-yil mart)",
+  },
 ]
 
 export const SOURCES = [
@@ -383,6 +426,7 @@ export const SOURCES = [
   "EPO — Patent Index 2025",
   "SBA — Swiss Bankers Association, Banking Barometer 2026; BCG Global Wealth 2026",
   "SERI / SBFI — kasb ta’limi; BSV — pensiya tizimi",
+  "SECO — erkin savdo bitimlari va sanoat bojlarining bekor qilinishi (2024); Federal kanslerlik — referendum natijalari",
   "Yevropa Ittifoqi bilan kelishuvlar — Shveytsariya Tashqi ishlar vazirligi (EDA), 2026",
   "AQSh bojlari — USTR (2025-noyabr kelishuvi); AQSh Oliy sudi, Learning Resources v. Trump (2026-fevral)",
   "O‘zbekiston: Statistika qo‘mitasi (2025, o‘sish 7,7%)",

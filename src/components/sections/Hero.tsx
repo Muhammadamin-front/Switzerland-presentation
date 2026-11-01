@@ -12,7 +12,7 @@ export function Hero() {
   const marble = useMarble("ink", 360, 90, 5)
 
   return (
-    <section id="kirish" data-stop aria-label="Kirish" className="relative h-svh min-h-[640px]">
+    <section id="kirish" data-stop aria-label="Kirish" className="relative h-svh min-h-[720px] max-md:h-auto max-md:min-h-svh">
       <InkBasin onInkDrop={setDrops} className="h-full w-full">
         {/* Still margin: paper wash keeps the title legible whatever the ink does */}
         <div
@@ -39,8 +39,8 @@ export function Hero() {
                 </span>
               </h1>
               <p className="mt-7 max-w-[34ch] text-[clamp(1.1rem,1.5vw,1.4rem)] leading-relaxed text-dilute" data-rev style={delay(260)}>
-                Dengizi ham, neft-gazi ham yo‘q tog‘li mamlakat qanday qilib dunyodagi eng boy va eng innovatsion iqtisodiyotlardan biriga
-                aylandi.
+                Dengizi ham, neft-gazi ham yo‘q tog‘li mamlakat qanday qilib dunyoning eng boy iqtisodiyotlaridan biriga aylandi — va buning ortida
+                qanday iqtisodiy siyosat turibdi.
               </p>
               <div className="pointer-events-auto mt-10 flex flex-wrap items-center gap-4" data-rev style={delay(420)}>
                 <button
@@ -65,10 +65,15 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-end justify-between gap-4 text-dilute" data-rev style={delay(600)}>
-            <p className="text-sm">
+          {/* Title-page credit: university, subject and author, set like a colophon */}
+          <div className="pointer-events-auto relative mt-8 border-l-2 border-seal pl-5 max-md:rounded-r-xl max-md:bg-paper/90 max-md:py-3 max-md:pr-3 max-sm:mt-6" data-rev style={delay(600)}>
+            <p className="label !tracking-[0.14em] text-depth">{PRESENTER.university}</p>
+            <p className="mt-1 text-sm text-dilute">{PRESENTER.faculty}</p>
+            <p className="mt-3 max-w-[60ch] text-[0.98rem] leading-snug text-depth">
               {PRESENTER.course} · 2026
-              {PRESENTER.name && <span className="text-depth"> · {PRESENTER.name}</span>}
+            </p>
+            <p className="mt-1 text-[0.98rem] text-dilute">
+              Tayyorladi: <span className="font-medium text-depth">{PRESENTER.name}</span>, {PRESENTER.group} talabasi
             </p>
           </div>
         </div>
