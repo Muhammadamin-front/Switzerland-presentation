@@ -65,15 +65,9 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Title-page credit: university, subject and author, set like a colophon */}
-          <div className="pointer-events-auto relative mt-8 border-l-2 border-seal pl-5 max-md:rounded-r-xl max-md:bg-paper/90 max-md:py-3 max-md:pr-3 max-sm:mt-6" data-rev style={delay(600)}>
-            <p className="label !tracking-[0.14em] text-depth">{PRESENTER.university}</p>
-            <p className="mt-1 text-sm text-dilute">{PRESENTER.faculty}</p>
-            <p className="mt-3 max-w-[60ch] text-[0.98rem] leading-snug text-depth">
-              {PRESENTER.course} · 2026
-            </p>
-            <p className="mt-1 text-[0.98rem] text-dilute">
-              Tayyorladi: <span className="font-medium text-depth">{PRESENTER.name}</span>, {PRESENTER.group} talabasi
+          <div className="mt-8 flex flex-wrap items-end justify-between gap-4 text-dilute" data-rev style={delay(600)}>
+            <p className="text-sm">
+              {PRESENTER.course} · 2026 · <span className="text-depth">{PRESENTER.name}</span>, {PRESENTER.group}
             </p>
           </div>
         </div>

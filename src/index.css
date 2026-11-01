@@ -535,3 +535,70 @@ html.lenis body {
     transform: none;
   }
 }
+
+/* ── Cover: typewriter caret, drawn cross, Swiss grid ─────────── */
+.cover-caret {
+  display: inline-block;
+  width: 0.07em;
+  height: 0.95em;
+  margin-left: 0.04em;
+  margin-right: -0.11em;
+  vertical-align: -0.12em;
+  background: var(--color-seal);
+}
+.cover-caret--idle {
+  animation: caret-blink 1.05s steps(1) infinite;
+}
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+.cover-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: cover-draw 2.2s var(--ease-ink) forwards;
+}
+@keyframes cover-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.cover-fill {
+  opacity: 0;
+  animation: cover-fill 1.6s var(--ease-ink) 2.2s forwards;
+}
+@keyframes cover-fill {
+  to {
+    opacity: 0.08;
+  }
+}
+.cover-grid {
+  background-image:
+    linear-gradient(90deg, var(--color-mist) 1px, transparent 1px),
+    linear-gradient(180deg, var(--color-mist) 1px, transparent 1px);
+  background-size: calc(100% / 12) 100%, 100% 25%;
+  opacity: 0.55;
+  animation: cover-grid 2.4s var(--ease-ink) both;
+}
+@keyframes cover-grid {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cover-draw,
+  .cover-fill,
+  .cover-grid,
+  .cover-caret--idle {
+    animation: none;
+    stroke-dashoffset: 0;
+    clip-path: none;
+  }
+  .cover-fill {
+    opacity: 0.08;
+  }
+}

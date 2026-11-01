@@ -12,6 +12,7 @@ export const PRESENTER = {
 }
 
 export type SectionId =
+  | "muqova"
   | "kirish"
   | "helvetia"
   | "raqamlar"
@@ -25,6 +26,7 @@ export type SectionId =
 
 /** `accent` — to‘rt rasmiy tildan biridagi so‘z (nemis, fransuz, italyan, romansh). */
 export const SECTIONS: { id: SectionId; label: string; accent: string }[] = [
+  { id: "muqova", label: "Muqova", accent: "Titel" },
   { id: "kirish", label: "Kirish", accent: "Willkommen" },
   { id: "helvetia", label: "Helvetia", accent: "Helvetia" },
   { id: "raqamlar", label: "Raqamlarda", accent: "Zahlen" },

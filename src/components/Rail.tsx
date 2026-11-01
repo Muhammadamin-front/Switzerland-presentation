@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
-import { ChartPie, Factory, Flag, FlaskConical, History, House, Landmark, Mountain, Sunrise, TrendingDown, type LucideIcon } from "lucide-react"
+import { BookOpen, ChartPie, Factory, Flag, FlaskConical, History, House, Landmark, Mountain, Sunrise, TrendingDown, type LucideIcon } from "lucide-react"
 import { PRESENTER, SECTIONS, type SectionId } from "@/lib/data"
 import { onScrollY, scrollToId } from "@/lib/scroll"
 import { cn } from "@/lib/utils"
 import { Seal } from "./Seal"
 
 const ICONS: Record<SectionId, LucideIcon> = {
+  muqova: BookOpen,
   kirish: House,
   helvetia: Mountain,
   raqamlar: ChartPie,
@@ -46,7 +47,7 @@ export function Rail() {
   return (
     <>
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-[var(--rail)] flex-col border-r border-mist bg-paper lg:flex">
-        <a href="#kirish" onClick={(e) => (e.preventDefault(), scrollToId("kirish"))} className="flex flex-col items-center gap-2.5 px-6 pt-6 pb-5">
+        <a href="#muqova" onClick={(e) => (e.preventDefault(), scrollToId("muqova"))} className="flex flex-col items-center gap-2.5 px-6 pt-6 pb-5">
           <Seal className="size-12" />
           <span className="label text-depth">Shveytsariya</span>
           <span className="accent -mt-2 text-base text-dilute">Schweizer Wirtschaft</span>

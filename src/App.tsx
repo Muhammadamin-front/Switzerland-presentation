@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Presenter } from "@/components/Presenter"
 import { Rail } from "@/components/Rail"
+import { Cover } from "@/components/sections/Cover"
 import { Finale } from "@/components/sections/Finale"
 import { Future } from "@/components/sections/Future"
 import { Hero } from "@/components/sections/Hero"
@@ -46,6 +47,7 @@ export default function App() {
       </a>
       <Rail />
       <main className="pt-12 lg:pt-0 lg:pl-[var(--rail)]">
+        <Cover />
         <Hero />
         <Helvetia />
         <Numbers />
