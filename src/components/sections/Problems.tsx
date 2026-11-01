@@ -12,11 +12,11 @@ export function Problems() {
         <FlowField theme="ink" density="medium" className="h-svh min-h-[560px]">
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
             <div aria-hidden="true" className="absolute top-1/2 left-1/2 h-[60%] w-[min(820px,92%)] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(closest-side,var(--color-paper)_40%,rgba(246,247,249,0.7)_70%,transparent)]" />
-            <Inscribed jp="課題" className="relative">
-              <WordRise as="h2" className="section-title text-depth" text="Mo‘jizaning narxi" />
+            <Inscribed accent="Les défis" className="relative items-center">
+              <WordRise as="h2" className="section-title text-depth" text="Muvaffaqiyatning narxi" />
             </Inscribed>
             <p className="lede relative mt-6 max-w-[46ch]" data-rev style={delay(160)}>
-              Qariyotgan aholi, dunyodagi eng katta davlat qarzi va zaif yen — Yaponiya bugun yechayotgan uchta og‘ir masala.
+              Qariyotgan aholi, AQSh bojlari va haddan tashqari kuchli frank — Shveytsariya bugun yechayotgan uchta masala. Past qarz esa uning eng katta zaxirasi.
             </p>
           </div>
         </FlowField>
@@ -25,17 +25,17 @@ export function Problems() {
       <div data-stop className="slide wrap-page grid gap-14 py-20 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div>
           <h3 className="text-[clamp(2rem,3.2vw,3rem)] leading-tight font-light text-depth" data-rev>
-            Har uch kishidan biri — 65 yoshdan katta
+            Endi keksalar yoshlardan ko‘p
           </h3>
           <p className="lede mt-6" data-rev style={delay(120)}>
-            2026-yilda 65+ yoshdagilar 29,6% ga yetdi — aholisi 40 mln dan ortiq davlatlar ichida eng yuqori ko‘rsatkich (Italiya — 25,6%). Ishlaydigan qo‘l
-            kamayadi, pensiya va tibbiyot xarajati ortadi.
+            2025-yil oxirida tarixda ilk bor 65 yoshdan kattalar (1,81 mln) 20 yoshgacha bo‘lganlardan (1,80 mln) ko‘payib ketdi. 2055-yilga borib har to‘rt
+            kishidan biri 65+ bo‘ladi — AHV pensiyasiga bosim ortadi, ishchi qo‘lni migrantlar to‘ldiradi.
           </p>
         </div>
         <figure>
           <AgingLine data={AGING} />
           <figcaption className="note mt-3">
-            Statistika byurosi; 2040 va 2070 — IPSS prognozi (2023). <span aria-hidden="true" className="mx-1 inline-block size-2 rounded-full bg-seal align-middle" /> 2026 — hozirgi holat
+            Jahon banki (BMT ma’lumotlari); 2055 — FSO prognozi (2025). <span aria-hidden="true" className="mx-1 inline-block size-2 rounded-full bg-seal align-middle" /> 2024 — so‘nggi ma’lumot
           </figcaption>
           <TableView
             caption="65 va undan katta yoshdagilar ulushi"
@@ -49,16 +49,16 @@ export function Problems() {
         <div className="wrap-page grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
             <h3 className="text-[clamp(2rem,3.2vw,3rem)] leading-tight font-light text-depth" data-rev>
-              Qarz YaIMdan 2,3 barobar katta
+              Qarz — atigi YaIMning ~40% i
             </h3>
             <p className="lede mt-6" data-rev style={delay(120)}>
-              Ammo qarz asosan ichki: davlat obligatsiyalarining qariyb yarmi Yaponiya Bankida, qolgani yapon banklari va pensiya fondlarida. Shu
-              sabab inqiroz bo‘lmayapti — lekin foiz ko‘tarilsa, qarzga xizmat qilish qimmatlashadi.
+              Bu muammo emas, balki zaxira: 2003-yildan amaldagi «qarz tormozi» byudjetni muvozanatda ushlaydi. Shu sabab Shveytsariya inqirozda ham
+              qarz olishga va kompaniyalarni qutqarishga qodir.
             </p>
           </div>
           <figure className="pt-6">
             <DebtBars data={DEBT} />
-            <figcaption className="note mt-5">Davlat yalpi qarzi, YaIMga nisbatan % · XVF WEO, 2025-oktabr (2025 bahosi, yaxlitlangan)</figcaption>
+            <figcaption className="note mt-5">Davlat yalpi qarzi, YaIMga nisbatan % · XVF WEO, 2026-oktabr (2025 bahosi, yaxlitlangan)</figcaption>
           </figure>
         </div>
       </div>

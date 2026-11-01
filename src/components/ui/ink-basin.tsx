@@ -32,11 +32,11 @@ function pigmentFrom(hex: string, strength = 1): Pigment {
   return c.map((v, i) => -Math.log(Math.max(v, 0.01) / PAPER[i]) * strength) as Pigment
 }
 
-const INDIGO = pigmentFrom("#1e2d4a")
-const SUMI = pigmentFrom("#14171d", 0.9)
-const DILUTE = pigmentFrom("#1e2d4a", 0.42)
+const SWISS_RED = pigmentFrom("#d52b1e")
+const SUMI = pigmentFrom("#1a1c20", 0.9)
+const DILUTE = pigmentFrom("#5d646e", 0.5)
 const CLEAR: Pigment = [0, 0, 0]
-const INKS = [INDIGO, SUMI, DILUTE]
+const INKS = [SWISS_RED, SUMI, DILUTE]
 
 const CFG = {
   simRes: 128,
@@ -300,7 +300,7 @@ function rings(x: number, y: number, count: number, area: number, start: number,
       x,
       y,
       area: area * (ink ? 1 : 0.75) * rand(0.7, 1.3),
-      pigment: last ? INDIGO : ink ? INKS[Math.floor(Math.random() * INKS.length)] : CLEAR,
+      pigment: last ? SWISS_RED : ink ? INKS[Math.floor(Math.random() * INKS.length)] : CLEAR,
       frames: 9,
       done: 0,
     })
@@ -713,7 +713,7 @@ function StaticRings() {
   return (
     <svg aria-hidden="true" className="absolute inset-0 -z-10 size-full" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice">
       {radii.map((r, i) => (
-        <circle key={r} cx="690" cy="320" r={r} fill={i % 2 === 0 ? (i === radii.length - 1 ? "#1e2d4a" : "#aeb6c2") : "#f6f7f9"} opacity={0.25 + i * 0.05} />
+        <circle key={r} cx="690" cy="320" r={r} fill={i % 2 === 0 ? (i === radii.length - 1 ? "#d52b1e" : "#a9afb8") : "#f6f7f9"} opacity={0.25 + i * 0.05} />
       ))}
     </svg>
   )

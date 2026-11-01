@@ -6,21 +6,21 @@ import { delay } from "@/lib/utils"
 
 export function Numbers() {
   return (
-    <section id="raqamlar" aria-label="Raqamlarda Yaponiya" className="bg-wash">
+    <section id="raqamlar" aria-label="Raqamlarda Shveytsariya" className="bg-wash">
       <div data-stop className="slide wrap-page py-20">
         <div className="grid items-end gap-8 lg:grid-cols-[1fr_1fr]">
-          <WordRise as="h2" className="section-title text-depth" text="Raqamlarda Yaponiya" />
+          <WordRise as="h2" className="section-title text-depth" text="Raqamlarda Shveytsariya" />
           <p className="lede lg:justify-self-end" data-rev style={delay(120)}>
-            YaIM bo‘yicha dunyoda beshinchi: 2025-yilda Hindiston Yaponiyani ozgina ortda qoldirdi. Bayroq doirasining maydoni — iqtisodiyot hajmi.
+            Bir shveytsar o‘rtacha bir yilda bir o‘zbekistonlikdan ~30 barobar ko‘p qiymat yaratadi. Bayroq doirasining maydoni — aholi jon boshiga YaIM.
           </p>
         </div>
 
         <figure className="mt-16">
-          <InkDrops data={GDP_DROPS} />
-          <figcaption className="note mt-2 text-center">Nominal YaIM, trillion AQSh dollari · XVF World Economic Outlook, 2025-aprel (2025 bahosi)</figcaption>
+          <InkDrops data={GDP_DROPS} unit="ming $" label="Aholi jon boshiga YaIM, ming dollar" />
+          <figcaption className="note mt-2 text-center">Aholi jon boshiga nominal YaIM, ming AQSh dollari · XVF World Economic Outlook, 2026-oktabr (2025 bahosi)</figcaption>
           <TableView
-            caption="Nominal YaIM, trillion dollar"
-            head={["Davlat", "YaIM, trln $"]}
+            caption="Aholi jon boshiga YaIM, ming dollar"
+            head={["Davlat", "YaIM / aholi, ming $"]}
             rows={GDP_DROPS.map((d) => [d.country, d.value.toLocaleString("ru-RU")])}
           />
         </figure>

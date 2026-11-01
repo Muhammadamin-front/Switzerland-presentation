@@ -33,12 +33,12 @@ function mulberry32(seed: number) {
 export type MarblePreset = "ink" | "mist" | "endpaper"
 
 const PALETTES: Record<MarblePreset, { bg: string; inks: string[]; clear: string }> = {
-  /** Dark: controls on indigo depth. Veins stay dark enough for paper text. */
-  ink: { bg: "#0a1a33", inks: ["#2b3d5e", "#3a4d70", "#1e2d4a", "#4a5d80"], clear: "#16264a" },
+  /** Dark: controls in Swiss red. Veins stay dark enough for paper text. */
+  ink: { bg: "#b82418", inks: ["#c9281c", "#9f1f15", "#d52b1e", "#a8241a"], clear: "#bd2619" },
   /** Light: a quiet ground for reading, hairline veins only. */
-  mist: { bg: "#f6f7f9", inks: ["#e6eaef", "#dde2e8", "#eef1f4", "#d3d9e1"], clear: "#f6f7f9" },
-  /** Endpaper band between paper and the indigo pool. */
-  endpaper: { bg: "#f6f7f9", inks: ["#1e2d4a", "#606d80", "#0a1a33", "#aeb6c2"], clear: "#f6f7f9" },
+  mist: { bg: "#f6f7f9", inks: ["#e8eaed", "#dfe2e6", "#eff0f2", "#d6d9de"], clear: "#f6f7f9" },
+  /** Band between paper and the graphite section: graphite veins with one red thread. */
+  endpaper: { bg: "#f6f7f9", inks: ["#23272e", "#5d646e", "#d52b1e", "#a9afb8"], clear: "#f6f7f9" },
 }
 
 function buildOps(w: number, h: number, preset: MarblePreset, seed: number): Op[] {

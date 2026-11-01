@@ -11,9 +11,9 @@ const KEYS: [string, string][] = [
 ]
 
 const TOUCH: [string, string][] = [
-  ["Kirish", "Sichqonchani suring — siyoh oqadi; bosing — yangi tomchi"],
+  ["Kirish", "Sichqonchani suring — bo‘yoq oqadi; bosing — yangi tomchi"],
   ["Sanoat", "To‘rni sichqoncha bilan torting; kartalarni bosing — aylanadi"],
-  ["Robotlar", "Robot sichqoncha ortidan qaraydi; suv nuqtalarini bosing"],
+  ["Innovatsiya", "Robot sichqoncha ortidan qaraydi; nuqtali to‘rni bosing"],
 ]
 
 /** Keyboard (and presentation clicker) navigation between stops. */
@@ -66,7 +66,7 @@ export function Presenter() {
 
   if (!help) return null
   return (
-    <div role="dialog" aria-label="Klaviatura yordami" className="fixed right-6 bottom-6 z-50 w-[340px] rounded-2xl border border-mist bg-paper p-6 shadow-[0_18px_40px_-18px_rgba(10,26,51,0.35)]">
+    <div role="dialog" aria-label="Klaviatura yordami" className="fixed right-6 bottom-6 z-50 w-[340px] rounded-2xl border border-mist bg-paper p-6 shadow-[0_18px_40px_-18px_rgba(19,21,24,0.35)]">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-normal text-depth">Taqdimotni boshqarish</h2>
         <button type="button" onClick={() => setHelp(false)} aria-label="Yopish" className="grid size-8 place-items-center rounded-full text-dilute hover:bg-mist hover:text-depth">

@@ -22,12 +22,12 @@ function useEntryCount<T extends HTMLElement>() {
   return { ref, count }
 }
 
-/** shader.md's PulsingBorder + rotating text ring, re-cut as a seal in ink tones. */
+/** shader.md's PulsingBorder + rotating text ring around the Swiss mark. */
 function SealRing() {
   return (
     <div className="relative grid size-40 place-items-center">
       <PulsingBorder
-        colors={["#aeb6c2", "#dde2e8", "#606d80", "#f6f7f9"]}
+        colors={["#d52b1e", "#dfe2e6", "#a9afb8", "#f6f7f9"]}
         colorBack="#00000000"
         speed={1.2}
         roundness={1}
@@ -47,8 +47,8 @@ function SealRing() {
         <defs>
           <path id="seal-ring" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
         </defs>
-        <text className="fill-feather text-[7.4px] tracking-[0.28em] uppercase">
-          <textPath href="#seal-ring">Yaponiya iqtisodiyoti · 日本経済 · 2026 · Rahmat ·</textPath>
+        <text className="fill-feather text-[6.2px] tracking-[0.22em] uppercase">
+          <textPath href="#seal-ring">Shveytsariya iqtisodiyoti · Schweiz · Suisse · Svizzera · Rahmat ·</textPath>
         </text>
       </svg>
     </div>
@@ -63,7 +63,7 @@ export function Finale() {
       <section id="xulosa" aria-label="Xulosa" className="relative isolate overflow-hidden bg-depth text-paper">
         <MeshGradient
           className="absolute inset-0 -z-10 h-full w-full"
-          colors={["#0a1a33", "#1e2d4a", "#060a12", "#3a4a66"]}
+          colors={["#131518", "#23272e", "#08090b", "#5a1a15"]}
           distortion={0.85}
           swirl={0.25}
           speed={0.22}
@@ -85,7 +85,7 @@ export function Finale() {
           <h2 className="mt-10 text-[clamp(4.5rem,12vw,10.5rem)] leading-none font-extralight tracking-[-0.04em] text-paper">
             {thanks.count > 0 ? <TextRoll key={thanks.count}>Rahmat!</TextRoll> : "Rahmat!"}
           </h2>
-          <p className="jp mt-5 text-[clamp(1.1rem,1.6vw,1.5rem)] tracking-[0.15em] text-feather">ご清聴ありがとうございました</p>
+          <p className="accent mt-5 text-[clamp(1.3rem,1.9vw,1.8rem)] text-feather">Danke · Merci · Grazie · Grazia</p>
           <p className="lede mt-4 !text-mist">E’tiboringiz uchun rahmat. Savollaringiz bo‘lsa — marhamat.</p>
           {PRESENTER.name && (
             <p className="mt-2 text-mist">
@@ -111,7 +111,7 @@ export function Finale() {
             ))}
           </ul>
         </div>
-        <p className="wrap-page note mt-14">Sayt React, Spline 3D, GSAP, Lenis va WebGL siyoh simulyatsiyasi bilan qurilgan · 2026</p>
+        <p className="wrap-page note mt-14">Sayt React, Spline 3D, GSAP, Lenis va WebGL suyuqlik simulyatsiyasi bilan qurilgan · 2026</p>
       </section>
     </>
   )

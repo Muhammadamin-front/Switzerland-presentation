@@ -13,7 +13,7 @@ function Tip({ x, y, children }: { x: string; y: string; children: ReactNode }) 
   return (
     <div
       role="status"
-      className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-[calc(100%+14px)] rounded-lg bg-depth px-3.5 py-2 text-sm whitespace-nowrap text-paper shadow-[0_10px_24px_-12px_rgba(10,26,51,0.6)]"
+      className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-[calc(100%+14px)] rounded-lg bg-depth px-3.5 py-2 text-sm whitespace-nowrap text-paper shadow-[0_10px_24px_-12px_rgba(19,21,24,0.6)]"
       style={{ left: x, top: y }}
     >
       {children}
@@ -56,19 +56,29 @@ export function TableView({ caption, head, rows }: { caption: string; head: stri
 
 /* ── GDP as flag drops: area ∝ value ────────────────────────────── */
 
-export function InkDrops({ data }: { data: { country: string; code: string; value: number; focus?: boolean }[] }) {
+export function InkDrops({
+  data,
+  unit,
+  label,
+}: {
+  data: { country: string; code: string; value: number; focus?: boolean }[]
+  unit: string
+  label: string
+}) {
   const [hover, setHover] = useState<number | null>(null)
   const W = 1200
-  const R = 150
   const gap = 34
   const max = Math.max(...data.map((d) => d.value))
-  const radii = data.map((d) => R * Math.sqrt(d.value / max))
-  const total = radii.reduce((s, r) => s + 2 * r, 0) + gap * (data.length - 1)
+  // Size the largest drop so the whole row fits the width (area ∝ value is kept).
+  const shares = data.map((d) => Math.sqrt(d.value / max))
+  const R = Math.min(150, (W - gap * (data.length - 1)) / (2 * shares.reduce((s, v) => s + Math.max(v, 24 / 150), 0)))
+  const radii = shares.map((v) => R * v)
+  const total = radii.reduce((s, r) => s + 2 * Math.max(r, 24), 0) + gap * (data.length - 1)
   let x = (W - total) / 2
   const cy = R + 16
   const pos = radii.map((r) => {
-    const c = x + r
-    x += 2 * r + gap
+    const c = x + Math.max(r, 24)
+    x += 2 * Math.max(r, 24) + gap
     return c
   })
   const labelY = cy + R + 44
@@ -76,7 +86,7 @@ export function InkDrops({ data }: { data: { country: string; code: string; valu
 
   return (
     <div className="relative" data-rev>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full overflow-visible" role="img" aria-label="Davlatlar YaIMi, trillion dollar; bayroq doirasining maydoni YaIMga mutanosib">
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full overflow-visible" role="img" aria-label={`${label}; bayroq doirasining maydoni qiymatga mutanosib`}>
         {data.map((d, i) => {
           const r = radii[i]
           return (
@@ -84,7 +94,7 @@ export function InkDrops({ data }: { data: { country: string; code: string; valu
               key={d.country}
               tabIndex={0}
               role="img"
-              aria-label={`${d.country}: ${fmt(d.value, 2)} trillion dollar`}
+              aria-label={`${d.country}: ${fmt(d.value)} ${unit}`}
               onMouseEnter={() => setHover(i)}
               onMouseLeave={() => setHover(null)}
               onFocus={() => setHover(i)}
@@ -103,7 +113,7 @@ export function InkDrops({ data }: { data: { country: string; code: string; valu
                 {d.country}
               </text>
               <text x={pos[i]} y={labelY + 26} textAnchor="middle" className={cn("tnum text-[17px]", d.focus ? "fill-depth" : "fill-dilute")}>
-                {fmt(d.value, d.value < 10 ? 2 : 1)}
+                {fmt(d.value)}
               </text>
             </g>
           )
@@ -111,7 +121,7 @@ export function InkDrops({ data }: { data: { country: string; code: string; valu
       </svg>
       {hover !== null && (
         <Tip x={`${(pos[hover] / W) * 100}%`} y="0%">
-          <span className="font-medium">{data[hover].country}</span> — {fmt(data[hover].value, 2)} trln $ · 2025
+          <span className="font-medium">{data[hover].country}</span> — {fmt(data[hover].value)} {unit} · 2025
         </Tip>
       )}
     </div>
@@ -216,7 +226,7 @@ export function AgingLine({ data }: { data: { year: number; value: number; proje
   const x0 = data[0].year
   const x1 = data[data.length - 1].year
   const x = (yr: number) => L + ((yr - x0) / (x1 - x0)) * (W - L - Rr)
-  const y = (v: number) => B - (v / 40) * (B - T)
+  const y = (v: number) => B - (v / 30) * (B - T)
   const actual = data.filter((d) => !d.projected)
   const lastActual = actual[actual.length - 1]
   const proj = [lastActual, ...data.filter((d) => d.projected)]
@@ -225,8 +235,8 @@ export function AgingLine({ data }: { data: { year: number; value: number; proje
 
   return (
     <div className="relative" data-rev>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full overflow-visible" role="img" aria-label="Yaponiyada 65 va undan katta yoshdagilar ulushi, foiz">
-        {[0, 10, 20, 30, 40].map((t) => (
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full overflow-visible" role="img" aria-label="Shveytsariyada 65 va undan katta yoshdagilar ulushi, foiz">
+        {[0, 10, 20, 30].map((t) => (
           <g key={t}>
             <line x1={L} x2={W - Rr} y1={y(t)} y2={y(t)} stroke="var(--color-mist)" />
             <text x={L - 12} y={y(t) + 5} textAnchor="end" className="tnum fill-dilute text-[20px]">
@@ -279,7 +289,7 @@ export function AgingLine({ data }: { data: { year: number; value: number; proje
   )
 }
 
-/* ── Debt / GDP: horizontal ink bars, Japan in the darkest ink ──── */
+/* ── Debt / GDP: horizontal bars, the focus country in the darkest ink ─ */
 
 export function DebtBars({ data }: { data: { country: string; code: string; value: number; focus?: boolean }[] }) {
   const max = 250

@@ -22,31 +22,31 @@ export function Hero() {
 
         <div className="pointer-events-none relative flex h-full flex-col px-[clamp(1.25rem,5vw,5rem)] pt-20 pb-8 lg:pt-12">
           <div className="my-auto flex items-stretch gap-[clamp(1.25rem,3vw,3rem)]">
-            {/* Bilingual lockup: the kanji hang like an inscription beside the title */}
-            <div className="hidden flex-col items-center gap-4 sm:flex">
-              <span className="jp text-[clamp(1.4rem,2vw,2rem)] leading-none tracking-[0.35em] text-ink [writing-mode:vertical-rl]">日本経済</span>
-              <span className="w-px flex-1 bg-feather" />
-              <Seal className="size-9" />
-            </div>
-
-            <div className="max-w-[40rem]">
+            <div className="max-w-[44rem]">
+              {/* Four-language lockup: the country's own names, led by the mark */}
+              <div className="mb-8 flex items-center gap-4" data-rev>
+                <Seal className="size-11" seal={false} />
+                <p className="accent text-[clamp(1.15rem,1.7vw,1.6rem)] leading-tight text-ink">
+                  Schweiz <span className="text-seal">·</span> Suisse <span className="text-seal">·</span> Svizzera <span className="text-seal">·</span> Svizra
+                </p>
+              </div>
               <h1 className="text-[clamp(3.2rem,6.6vw,6rem)] leading-[0.98] font-[250] tracking-[-0.03em] text-depth" data-words="">
                 <span className="w" style={wordIndex(0)}>
-                  Yaponiya
+                  Shveytsariya
                 </span>{" "}
                 <span className="w" style={wordIndex(1)}>
                   iqtisodiyoti
                 </span>
               </h1>
               <p className="mt-7 max-w-[34ch] text-[clamp(1.1rem,1.5vw,1.4rem)] leading-relaxed text-dilute" data-rev style={delay(260)}>
-                Urushdan keyingi vayronadan robotlar davrigacha: resurssiz orol mamlakat qanday qilib dunyoning yetakchi iqtisodiyotlaridan biriga
+                Dengizi ham, neft-gazi ham yo‘q tog‘li mamlakat qanday qilib dunyodagi eng boy va eng innovatsion iqtisodiyotlardan biriga
                 aylandi.
               </p>
               <div className="pointer-events-auto mt-10 flex flex-wrap items-center gap-4" data-rev style={delay(420)}>
                 <button
                   type="button"
-                  onClick={() => scrollToId("nippon")}
-                  className="group inline-flex h-14 items-center gap-4 rounded-full bg-depth bg-[length:180%_auto] bg-[position:0%_50%] pr-3 pl-7 text-paper transition-[background-position] duration-[1600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[position:100%_50%] active:scale-[0.98]"
+                  onClick={() => scrollToId("helvetia")}
+                  className="group inline-flex h-14 items-center gap-4 rounded-full bg-seal bg-[length:180%_auto] bg-[position:0%_50%] pr-3 pl-7 text-paper transition-[background-position] duration-[1600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[position:100%_50%] active:scale-[0.98]"
                   style={marble ? { backgroundImage: `url(${marble})` } : undefined}
                 >
                   <span className="label !tracking-[0.16em]">Taqdimotni boshlash</span>

@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
-/* ── Suminagashi tokens ─────────────────────────────────────────────
-   Paper-white water, indigo and carbon ink, dye thinning to gray.
-   One vermilion seal (shu) is rationed to the mark and the "now" marker. */
+/* ── Swiss tokens ───────────────────────────────────────────────────
+   Glacier-white paper, graphite type in a grotesk, cool grays for the
+   grid — and one Swiss red, used like the flag: for the mark, the "now"
+   marker and the single thing each screen wants you to look at. */
 @theme {
   --color-paper: #f6f7f9;
-  --color-wash: #eceff3;
-  --color-mist: #dde2e8;
-  --color-feather: #aeb6c2;
-  --color-dilute: #606d80;
-  --color-ink: #1e2d4a;
-  --color-depth: #0a1a33;
-  --color-sumi: #060a12;
-  --color-seal: #c23b22;
+  --color-wash: #eef0f2;
+  --color-mist: #dfe2e6;
+  --color-feather: #a9afb8;
+  --color-dilute: #5d646e;
+  --color-ink: #23272e;
+  --color-depth: #131518;
+  --color-sumi: #08090b;
+  --color-seal: #d52b1e;
 
   /* shadcn roles */
   --color-background: var(--color-paper);
@@ -24,8 +25,8 @@
   --color-primary: var(--color-ink);
   --color-primary-foreground: var(--color-paper);
 
-  --font-sans: "Commissioner", ui-sans-serif, system-ui, sans-serif;
-  --font-jp: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-sans: "Inter Tight", "Helvetica Neue", Helvetica, ui-sans-serif, system-ui, sans-serif;
+  --font-accent: "Instrument Serif", Georgia, serif;
 
   --ease-ink: cubic-bezier(0.16, 1, 0.3, 1);
   --rail: 0px;
@@ -123,10 +124,12 @@ html.lenis body {
     letter-spacing: 0.18em;
     text-transform: uppercase;
   }
-  .jp {
-    font-family: var(--font-jp);
-    font-weight: 500;
-    letter-spacing: 0.04em;
+  /* Words in the four national languages: an italic serif against the grotesk */
+  .accent {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
   }
   .num {
     font-feature-settings: "lnum" 1;

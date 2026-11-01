@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Bot, Droplet, Factory, Flag, History, House, Mountain, Sunrise, TrendingDown, Waves, type LucideIcon } from "lucide-react"
+import { ChartPie, Coins, Factory, Flag, FlaskConical, History, House, Mountain, Sunrise, TrendingDown, type LucideIcon } from "lucide-react"
 import { PRESENTER, SECTIONS, type SectionId } from "@/lib/data"
 import { onScrollY, scrollToId } from "@/lib/scroll"
 import { cn } from "@/lib/utils"
@@ -7,12 +7,12 @@ import { Seal } from "./Seal"
 
 const ICONS: Record<SectionId, LucideIcon> = {
   kirish: House,
-  nippon: Mountain,
-  raqamlar: Droplet,
+  helvetia: Mountain,
+  raqamlar: ChartPie,
   tarix: History,
-  turgunlik: Waves,
-  monozukuri: Factory,
-  robotlar: Bot,
+  frank: Coins,
+  sanoat: Factory,
+  innovatsiya: FlaskConical,
   muammolar: TrendingDown,
   kelajak: Sunrise,
   xulosa: Flag,
@@ -48,8 +48,8 @@ export function Rail() {
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-[var(--rail)] flex-col border-r border-mist bg-paper lg:flex">
         <a href="#kirish" onClick={(e) => (e.preventDefault(), scrollToId("kirish"))} className="flex flex-col items-center gap-3 px-6 pt-8 pb-7">
           <Seal className="size-16" />
-          <span className="label text-depth">Nippon keizai</span>
-          <span className="jp -mt-2 text-sm text-dilute">日本経済</span>
+          <span className="label text-depth">Shveytsariya</span>
+          <span className="accent -mt-2 text-base text-dilute">Schweizer Wirtschaft</span>
         </a>
 
         <nav aria-label="Bo‘limlar" className="mx-5 flex-1 overflow-y-auto border-t border-mist pt-5">
@@ -74,7 +74,7 @@ export function Rail() {
                     <span
                       className={cn(
                         "grid size-8 place-items-center rounded-full transition-colors duration-500",
-                        on ? "bg-depth text-paper" : "text-dilute group-hover:text-depth",
+                        on ? "bg-seal text-paper" : "text-dilute group-hover:text-depth",
                       )}
                     >
                       <Icon className="size-[15px]" strokeWidth={1.6} />
@@ -95,7 +95,7 @@ export function Rail() {
             </span>
           </div>
           <div className="mt-3 h-px w-full bg-mist">
-            <div className="h-px bg-ink transition-[width] duration-300" style={{ width: `${progress * 100}%` }} />
+            <div className="h-px bg-seal transition-[width] duration-300" style={{ width: `${progress * 100}%` }} />
           </div>
           {PRESENTER.name && <p className="mt-4 text-sm text-depth">{PRESENTER.name}</p>}
           {PRESENTER.group && <p className="text-xs text-dilute">{PRESENTER.group}</p>}
@@ -113,7 +113,7 @@ export function Rail() {
         <span className="tnum ml-auto text-xs text-dilute">
           {pad(active + 1)} / {pad(SECTIONS.length)}
         </span>
-        <div className="absolute inset-x-0 bottom-0 h-px bg-ink" style={{ width: `${progress * 100}%` }} />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-seal" style={{ width: `${progress * 100}%` }} />
       </header>
     </>
   )

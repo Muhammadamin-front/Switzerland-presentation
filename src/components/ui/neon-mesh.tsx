@@ -2,8 +2,8 @@
 
 /**
  * NeonMesh (kinetic.md) — Verlet cloth reacting to the cursor.
- * Re-dyed for the ink world: indigo threads on paper, the "hot" threads under
- * the cursor darken to indigo depth instead of neon lime. Also fixes the
+ * Re-dyed for the ink world:  graphite threads on paper, the "hot" threads under
+ * the cursor turn Swiss red instead of neon lime. Also fixes the
  * accumulating ctx.scale on resize and pauses the loop off-screen.
  */
 
@@ -38,8 +38,8 @@ export interface NeonMeshProps {
 }
 
 const BG = "#f6f7f9"
-const THREAD = "30, 45, 74"
-const HOT = "#0a1a33"
+const THREAD = "35, 39, 46"
+const HOT = "#d52b1e"
 
 export function NeonMesh({ className, children }: NeonMeshProps) {
   const containerRef = useRef<HTMLDivElement | null>(null)

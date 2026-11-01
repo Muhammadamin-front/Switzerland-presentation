@@ -2,9 +2,9 @@
 
 /**
  * Parallax (parallax.md, Osmo) — the same GSAP ScrollTrigger timeline and layer
- * speeds, carried by a real photograph of Mount Fuji: the photo rides the
+ * speeds, carried by a real photograph of the Matterhorn: the photo rides the
  * middle speed, the title drifts slower in front of it, and a band of mist
- * (the front layer) dissolves the city into the paper below.
+ * (the front layer) dissolves the valley into the paper below.
  * Lenis is driven once for the whole page in lib/scroll.ts.
  */
 
@@ -45,14 +45,14 @@ export function ParallaxComponent({ title, image, alt }: { title: ReactNode; ima
           data-parallax-layer="2"
           src={image}
           alt={alt}
-          width={2400}
-          height={1561}
+          width={2000}
+          height={1333}
           loading="eager"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_62%] saturate-[0.88] will-change-transform"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_40%] saturate-[0.92] will-change-transform"
         />
 
-        <div data-parallax-layer="3" className="absolute inset-x-0 top-[5%] flex flex-col items-center text-center will-change-transform">
+        <div data-parallax-layer="3" className="absolute inset-x-0 top-[5%] flex flex-col items-center px-5 text-center will-change-transform max-lg:top-[11%]">
           {title}
         </div>
 

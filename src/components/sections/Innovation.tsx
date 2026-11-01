@@ -7,7 +7,7 @@ import { SonarGrid } from "@/components/ui/sonar-grid"
 import { SplineScene } from "@/components/ui/splite"
 import { Spotlight } from "@/components/ui/spotlight"
 import { WordRise } from "@/components/ui/word-rise"
-import { ROBOT_CHAIN, ROBOT_STATS, ROBOT_TIMELINE, ROBOT_WHY } from "@/lib/data"
+import { INNOVATION_CHAIN, INNOVATION_STATS, INNOVATION_WHY, INVENTIONS } from "@/lib/data"
 import { delay } from "@/lib/utils"
 
 /** Mount the Spline scene only when the card is close, so the 3D download never delays the hero. */
@@ -32,7 +32,7 @@ function useNear<T extends HTMLElement>(margin = "900px") {
   return { ref, near }
 }
 
-/** SplineSceneBasic from robot.md, carrying the robot section's copy. */
+/** SplineSceneBasic from robot.md, carrying the lab-to-factory story. */
 function RobotCard() {
   const { ref, near } = useNear<HTMLDivElement>()
   return (
@@ -41,9 +41,10 @@ function RobotCard() {
 
       <div className="flex h-full max-md:flex-col">
         <div className="relative z-10 flex flex-1 flex-col justify-center p-8 md:p-12">
-          <h3 className="text-[clamp(2rem,3.4vw,3.2rem)] leading-[1.05] font-light text-paper">Inson bilan yonma-yon</h3>
+          <h3 className="text-[clamp(2rem,3.4vw,3.2rem)] leading-[1.05] font-light text-paper">Laboratoriyadan zavodgacha</h3>
           <p className="mt-5 max-w-[44ch] leading-relaxed text-mist">
-            Yapon zavodida robot ishchini quvib chiqarmaydi: og‘ir, xavfli va bir xil ishni u oladi, inson esa nazorat qiladi va jarayonni takomillashtiradi.
+            ETH Tsyurix va EPFL Lozanna — Yevropaning eng kuchli texnika universitetlari. Ularning laboratoriyalaridan robotlar, dronlar va yangi dorilar chiqib,
+            startap va eksport mahsulotiga aylanadi. Ish haqi qimmat mamlakatda raqobat faqat aql bilan yutiladi.
           </p>
         </div>
 
@@ -61,17 +62,17 @@ function RobotCard() {
   )
 }
 
-export function Robots() {
+export function Innovation() {
   return (
-    <section id="robotlar" aria-label="Robotlar mamlakati" className="bg-depth text-paper">
+    <section id="innovatsiya" aria-label="Innovatsiya" className="bg-depth text-paper">
       <MarbleBand />
       <div data-stop className="slide wrap-page py-20">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-end">
-          <Inscribed jp="ロボット大国" tone="text-feather">
-            <WordRise as="h2" className="text-[clamp(3rem,7vw,6rem)] leading-[0.98] font-[250] tracking-[-0.03em] text-paper" text="Robotlar mamlakati" />
+          <Inscribed accent="Innovation · Innovazione" tone="text-feather">
+            <WordRise as="h2" className="text-[clamp(3rem,7vw,6rem)] leading-[0.98] font-[250] tracking-[-0.03em] text-paper" text="Dunyoning eng innovatsion davlati" />
           </Inscribed>
           <p className="lede !text-mist" data-rev style={delay(120)}>
-            Yaponiya robotni o‘yinchoq emas, iqtisodiy zarurat deb biladi: ishchi qo‘llar kamaymoqda, robotlar esa bu bo‘shliqni to‘ldirmoqda.
+            Xomashyosi yo‘q mamlakat bilim sotadi. WIPO reytingida Shveytsariya 2011-yildan beri — 16 yil ketma-ket birinchi o‘rinda.
           </p>
         </div>
       </div>
@@ -82,35 +83,35 @@ export function Robots() {
       </div>
 
       <div data-stop>
-        <SonarGrid color="#aeb6c2" baseOpacity={0.16} spacing={28} pingEvery={2.6} ringWidth={110} className="slide py-20">
+        <SonarGrid color="#a9afb8" baseOpacity={0.16} spacing={28} pingEvery={2.6} ringWidth={110} className="slide py-20">
           <div className="wrap-page">
-            <WordRise as="h2" className="text-[clamp(2rem,3.6vw,3.4rem)] leading-tight font-light text-paper" text="Robotlar raqamlarda" />
+            <WordRise as="h2" className="text-[clamp(2rem,3.6vw,3.4rem)] leading-tight font-light text-paper" text="Innovatsiya raqamlarda" />
             <dl className="mt-14 grid gap-y-12 sm:grid-cols-2 xl:grid-cols-4">
-              {ROBOT_STATS.map((s, i) => (
+              {INNOVATION_STATS.map((s, i) => (
                 <div key={s.label} className="border-l border-white/15 pr-6 pl-6" data-rev style={delay(90 * i)}>
                   <dd className="order-first text-[clamp(2.6rem,4vw,3.8rem)] leading-none font-light text-paper">
-                    <CountNumber value={s.value} suffix={s.suffix} />
+                    <CountNumber value={s.value} decimals={s.decimals} prefix={s.prefix} suffix={s.suffix} />
                   </dd>
                   <dt className="mt-4 leading-snug text-mist">{s.label}</dt>
                   <dd className="note mt-2 !text-feather">{s.note}</dd>
                 </div>
               ))}
             </dl>
-            <p className="note mt-12 !text-feather">Manba: IFR World Robotics 2025 (2024-yil ma’lumotlari)</p>
+            <p className="note mt-12 !text-feather">Manbalar: WIPO Global Innovation Index 2026; EPO Patent Index 2025; FSO — R&D statistikasi (2023)</p>
           </div>
         </SonarGrid>
       </div>
 
       <div data-stop className="slide wrap-page py-20">
-        <WordRise as="h2" className="text-[clamp(2rem,3.6vw,3.4rem)] leading-tight font-light text-paper" text="Yarim asrlik yo‘l" />
+        <WordRise as="h2" className="text-[clamp(2rem,3.6vw,3.4rem)] leading-tight font-light text-paper" text="Shveytsariyadan dunyoga" />
         <ol className="relative mt-16 grid gap-10 md:grid-cols-6 md:gap-6" data-rev>
           <svg aria-hidden="true" className="absolute top-[3.1rem] left-0 hidden h-2 w-full overflow-visible md:block" viewBox="0 0 100 2" preserveAspectRatio="none">
-            <path className="draw" pathLength={1} d="M0 1 H100" stroke="#606d80" strokeWidth="1" vectorEffect="non-scaling-stroke" fill="none" />
+            <path className="draw" pathLength={1} d="M0 1 H100" stroke="#5d646e" strokeWidth="1" vectorEffect="non-scaling-stroke" fill="none" />
           </svg>
-          {ROBOT_TIMELINE.map((t, i) => (
+          {INVENTIONS.map((t, i) => (
             <li key={t.year} className="relative" style={delay(120 * i)}>
               <span className="tnum block text-2xl font-light text-paper">{t.year}</span>
-              <span className={`relative mt-3 mb-5 block size-3.5 rounded-full border-2 border-depth ${i === ROBOT_TIMELINE.length - 1 ? "bg-seal" : "bg-feather"}`} />
+              <span className={`relative mt-3 mb-5 block size-3.5 rounded-full border-2 border-depth ${i === INVENTIONS.length - 1 ? "bg-seal" : "bg-feather"}`} />
               <h3 className="text-[1.05rem] font-normal text-paper">{t.name}</h3>
               <p className="mt-1.5 text-[0.92rem] leading-relaxed text-feather">{t.text}</p>
             </li>
@@ -121,19 +122,19 @@ export function Robots() {
       <div className="bg-sumi">
         <div data-stop className="slide wrap-page py-20">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
-            <WordRise as="h2" className="section-title text-paper" text="Nega robot — iqtisodiy zarurat?" />
+            <WordRise as="h2" className="section-title text-paper" text="Nega innovatsiya — iqtisodiy zarurat?" />
             <p className="lede !text-mist" data-rev style={delay(120)}>
-              Zanjirni chapdan o‘ngga o‘qing: demografiya muammosi robot orqali unumdorlik va eksportga aylanadi.
+              Zanjirni chapdan o‘ngga o‘qing: xomashyo yo‘qligi ta’lim va tadqiqot orqali rekord eksportga aylanadi.
             </p>
           </div>
 
           <ol className="mt-16 grid gap-10 md:grid-cols-5 md:gap-0" data-rev>
-            {ROBOT_CHAIN.map((c, i) => (
+            {INNOVATION_CHAIN.map((c, i) => (
               <li key={c.title} className="relative md:pr-8" style={delay(160 * i)}>
-                {i < ROBOT_CHAIN.length - 1 && (
+                {i < INNOVATION_CHAIN.length - 1 && (
                   <svg aria-hidden="true" viewBox="0 0 100 12" preserveAspectRatio="none" className="absolute top-[1.35rem] left-14 hidden h-3 w-[calc(100%-4.5rem)] overflow-visible md:block">
-                    <path className="draw" pathLength={1} d="M0 6 H96" stroke="#606d80" strokeWidth="1.2" vectorEffect="non-scaling-stroke" fill="none" style={{ transitionDelay: `${i * 260 + 300}ms` }} />
-                    <path className="draw" pathLength={1} d="M92 1 L100 6 L92 11" stroke="#aeb6c2" strokeWidth="1.2" vectorEffect="non-scaling-stroke" fill="none" style={{ transitionDelay: `${i * 260 + 900}ms` }} />
+                    <path className="draw" pathLength={1} d="M0 6 H96" stroke="#5d646e" strokeWidth="1.2" vectorEffect="non-scaling-stroke" fill="none" style={{ transitionDelay: `${i * 260 + 300}ms` }} />
+                    <path className="draw" pathLength={1} d="M92 1 L100 6 L92 11" stroke="var(--color-seal)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" fill="none" style={{ transitionDelay: `${i * 260 + 900}ms` }} />
                   </svg>
                 )}
                 <span className="grid size-11 place-items-center rounded-full border border-feather/60">
@@ -148,9 +149,9 @@ export function Robots() {
         </div>
 
         <div data-stop className="slide wrap-page py-20">
-          <WordRise as="h2" className="text-[clamp(2rem,3.6vw,3.4rem)] leading-tight font-light text-paper" text="Robot Yaponiyaga nima beradi?" />
+          <WordRise as="h2" className="text-[clamp(2rem,3.6vw,3.4rem)] leading-tight font-light text-paper" text="Innovatsiya Shveytsariyaga nima beradi?" />
           <div className="mt-14 grid gap-x-16 gap-y-12 md:grid-cols-2">
-            {ROBOT_WHY.map((w, i) => (
+            {INNOVATION_WHY.map((w, i) => (
               <div key={w.title} className="flex gap-5" data-rev style={delay(80 * i)}>
                 <span aria-hidden="true" className="mt-2 size-2.5 shrink-0 rounded-full border border-feather" />
                 <div>
@@ -160,7 +161,7 @@ export function Robots() {
               </div>
             ))}
           </div>
-          <p className="note mt-12 !text-feather">Manbalar: IFR World Robotics 2025; JARA 2025; Recruit Works Institute (2023); Statistika byurosi (2026).</p>
+          <p className="note mt-12 !text-feather">Manbalar: WIPO GII 2026; EPO 2025; FSO 2023; SERI; BAZG 2025.</p>
         </div>
       </div>
     </section>

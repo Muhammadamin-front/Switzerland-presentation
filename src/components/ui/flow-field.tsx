@@ -2,7 +2,7 @@
 
 /**
  * @name: FlowField (motion.md, kokonutui — MIT)
- * Adapted to the ink world: an "ink" theme draws dark indigo currents on
+ * Adapted to the ink world: an "ink" theme draws Swiss-red currents on
  * paper-white water, the canvas sizes to its container instead of the window,
  * and the loop pauses when the section is off-screen.
  */
@@ -47,7 +47,7 @@ const PARTICLE_COUNTS: Record<ParticleDensity, number> = {
 }
 
 const THEMES: Record<ColorTheme, ThemeConfig> = {
-  ink: { hueStart: 214, hueRange: 16, saturation: 42, lightness: 22, bg: "246, 247, 249", trailAlpha: 0.045, size: 0.9 },
+  ink: { hueStart: 356, hueRange: 12, saturation: 62, lightness: 40, bg: "246, 247, 249", trailAlpha: 0.045, size: 0.9 },
   aurora: { hueStart: 120, hueRange: 200, saturation: 90, lightness: 62, bg: "5, 5, 8", trailAlpha: 0.06, size: 1.3 },
   ember: { hueStart: 0, hueRange: 55, saturation: 95, lightness: 58, bg: "8, 4, 2", trailAlpha: 0.07, size: 1.3 },
   ocean: { hueStart: 180, hueRange: 90, saturation: 88, lightness: 60, bg: "2, 6, 10", trailAlpha: 0.06, size: 1.3 },

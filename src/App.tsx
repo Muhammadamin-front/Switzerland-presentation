@@ -4,13 +4,13 @@ import { Rail } from "@/components/Rail"
 import { Finale } from "@/components/sections/Finale"
 import { Future } from "@/components/sections/Future"
 import { Hero } from "@/components/sections/Hero"
+import { Franc } from "@/components/sections/Franc"
+import { Helvetia } from "@/components/sections/Helvetia"
 import { History } from "@/components/sections/History"
-import { Monozukuri } from "@/components/sections/Monozukuri"
-import { Nippon } from "@/components/sections/Nippon"
+import { Innovation } from "@/components/sections/Innovation"
 import { Numbers } from "@/components/sections/Numbers"
 import { Problems } from "@/components/sections/Problems"
-import { Robots } from "@/components/sections/Robots"
-import { Stall } from "@/components/sections/Stall"
+import { SwissMade } from "@/components/sections/SwissMade"
 import { startScroll } from "@/lib/scroll"
 
 /** One IntersectionObserver reveals every word group and atom once (scroll-web.md). */
@@ -41,18 +41,18 @@ export default function App() {
 
   return (
     <>
-      <a href="#nippon" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-depth focus:px-4 focus:py-2 focus:text-paper">
+      <a href="#helvetia" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-depth focus:px-4 focus:py-2 focus:text-paper">
         Taqdimotga o‘tish
       </a>
       <Rail />
       <main className="pt-12 lg:pt-0 lg:pl-[var(--rail)]">
         <Hero />
-        <Nippon />
+        <Helvetia />
         <Numbers />
         <History />
-        <Stall />
-        <Monozukuri />
-        <Robots />
+        <Franc />
+        <SwissMade />
+        <Innovation />
         <Problems />
         <Future />
         <Finale />

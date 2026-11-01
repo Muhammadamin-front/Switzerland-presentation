@@ -1,7 +1,7 @@
 import { useMarble } from "@/hooks/useMarble"
 import { cn } from "@/lib/utils"
 
-/** A strip of marbled endpaper marking the passage from paper into the indigo pool. */
+/** A strip of marbled endpaper marking the passage from paper into the graphite section. */
 export function MarbleBand({ className, seed = 11 }: { className?: string; seed?: number }) {
   const url = useMarble("endpaper", 900, 160, seed)
   return (

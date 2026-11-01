@@ -1,5 +1,5 @@
 /* Barcha matn va raqamlar shu faylda. Taqdimotdan oldin shu yerda tahrirlang.
-   "~" belgisi — yaxlitlangan yoki taxminiy qiymat. */
+   "~" belgisi — yaxlitlangan yoki taxminiy qiymat. Har bir raqam yonida manba va yil. */
 
 /** Ismingiz va guruhingizni yozing — bo‘sh qolsa, ko‘rsatilmaydi. */
 export const PRESENTER = {
@@ -10,370 +10,381 @@ export const PRESENTER = {
 
 export type SectionId =
   | "kirish"
-  | "nippon"
+  | "helvetia"
   | "raqamlar"
   | "tarix"
-  | "turgunlik"
-  | "monozukuri"
-  | "robotlar"
+  | "frank"
+  | "sanoat"
+  | "innovatsiya"
   | "muammolar"
   | "kelajak"
   | "xulosa"
 
-export const SECTIONS: { id: SectionId; label: string; jp: string }[] = [
-  { id: "kirish", label: "Kirish", jp: "序" },
-  { id: "nippon", label: "Nippon", jp: "日本" },
-  { id: "raqamlar", label: "Raqamlarda", jp: "数" },
-  { id: "tarix", label: "Tarix", jp: "史" },
-  { id: "turgunlik", label: "Turg‘unlik", jp: "停" },
-  { id: "monozukuri", label: "Sanoat", jp: "工" },
-  { id: "robotlar", label: "Robotlar", jp: "ロボ" },
-  { id: "muammolar", label: "Muammolar", jp: "課題" },
-  { id: "kelajak", label: "Kelajak", jp: "未来" },
-  { id: "xulosa", label: "Xulosa", jp: "結" },
+/** `accent` — to‘rt rasmiy tildan biridagi so‘z (nemis, fransuz, italyan, romansh). */
+export const SECTIONS: { id: SectionId; label: string; accent: string }[] = [
+  { id: "kirish", label: "Kirish", accent: "Willkommen" },
+  { id: "helvetia", label: "Helvetia", accent: "Helvetia" },
+  { id: "raqamlar", label: "Raqamlarda", accent: "Zahlen" },
+  { id: "tarix", label: "Tarix", accent: "Histoire" },
+  { id: "frank", label: "Frank", accent: "Franken" },
+  { id: "sanoat", label: "Sanoat", accent: "Swiss Made" },
+  { id: "innovatsiya", label: "Innovatsiya", accent: "Innovation" },
+  { id: "muammolar", label: "Muammolar", accent: "Défis" },
+  { id: "kelajak", label: "Kelajak", accent: "Futuro" },
+  { id: "xulosa", label: "Xulosa", accent: "Fazit" },
 ]
 
 export const HERO_READOUTS = [
-  { label: "YaIM", value: "~4,2 trln $", note: "2025, XVF" },
-  { label: "Aholi", value: "~123 mln", note: "2025" },
-  { label: "65+ yoshdagilar", value: "29,6%", note: "2026, rekord" },
+  { label: "YaIM", value: "~1,06 trln $", note: "2025, XVF" },
+  { label: "Aholi", value: "9,13 mln", note: "2025-yil oxiri, FSO" },
+  { label: "Innovatsiya", value: "1-o‘rin", note: "GII 2026, 16-yil ketma-ket" },
 ]
 
-export const NIPPON_FACTS = [
-  { value: "378 ming km²", label: "Maydoni — O‘zbekistondan biroz kichik" },
-  { value: "14 125", label: "Orollar soni (2023-yilgi qayta sanoq)" },
-  { value: "~13%", label: "Energiyani o‘zi ta’minlashi — qolgani import" },
-  { value: "¥ Yen", label: "Milliy valyuta · Poytaxt — Tokio" },
+export const HELVETIA_FACTS = [
+  { value: "41 285 km²", label: "Maydoni — O‘zbekistondan ~11 marta kichik" },
+  { value: "26 kanton", label: "Federal davlat: har bir kanton o‘z soliq stavkasini belgilaydi" },
+  { value: "4 til", label: "Nemis, fransuz, italyan va romansh — hammasi rasmiy" },
+  { value: "CHF", label: "Shveytsariya franki · Federal shahar — Bern" },
 ]
 
-/** GDP comparison drawn as flag drops (area ∝ value). XVF WEO, 2025-aprel, 2025 uchun baho. */
+/** Aholi jon boshiga nominal YaIM, ming AQSh dollari. XVF WEO, 2026-oktabr (2025 bahosi). */
 export const GDP_DROPS = [
-  { country: "AQSh", code: "us", value: 30.5 },
-  { country: "Xitoy", code: "cn", value: 19.2 },
-  { country: "Germaniya", code: "de", value: 4.7 },
-  { country: "Hindiston", code: "in", value: 4.19 },
-  { country: "Yaponiya", code: "jp", value: 4.19, focus: true },
-  { country: "Buyuk Britaniya", code: "gb", value: 3.8 },
+  { country: "Lyuksemburg", code: "lu", value: 148.2 },
+  { country: "Irlandiya", code: "ie", value: 123.8 },
+  { country: "Shveytsariya", code: "ch", value: 117.2, focus: true },
+  { country: "Singapur", code: "sg", value: 99.4 },
+  { country: "AQSh", code: "us", value: 90.3 },
+  { country: "Germaniya", code: "de", value: 61.3 },
+  { country: "O‘zbekiston", code: "uz", value: 3.8 },
 ]
 
 export const KEY_FIGURES = [
   {
-    value: 34,
+    value: 1.06,
     prefix: "~",
-    suffix: " ming $",
-    label: "Aholi jon boshiga YaIM",
-    note: "XVF, 2025",
+    suffix: " trln $",
+    decimals: 2,
+    label: "Nominal YaIM — aholisi 9 mln bo‘lgan mamlakat uchun ulkan hajm",
+    note: "XVF WEO, 2026-oktabr (2025 bahosi)",
   },
   {
-    value: 2.5,
+    value: 2.8,
+    suffix: "%",
+    decimals: 1,
+    label: "Ishsizlik darajasi — Yevropadagi eng pastlardan",
+    note: "SECO, 2025-yil o‘rtachasi",
+  },
+  {
+    value: 40,
+    prefix: "~",
+    suffix: "%",
+    label: "Davlat qarzi / YaIM — rivojlangan davlatlar ichida eng pastlardan",
+    note: "XVF WEO, 2026-oktabr (2025 bahosi)",
+  },
+  {
+    value: 287,
+    suffix: " mlrd CHF",
+    label: "Eksport — tarixiy rekord",
+    note: "BAZG (bojxona), 2025",
+  },
+  {
+    value: 53,
+    suffix: "%",
+    label: "Kimyo va farmatsevtikaning eksportdagi ulushi (152 mlrd CHF)",
+    note: "BAZG, 2025",
+  },
+  {
+    value: 0.2,
     prefix: "~",
     suffix: "%",
     decimals: 1,
-    label: "Ishsizlik darajasi — dunyodagi eng pastlardan",
-    note: "Statistika byurosi, 2025",
-  },
-  {
-    value: 230,
-    prefix: "~",
-    suffix: "%",
-    label: "Davlat qarzi / YaIM — rivojlangan davlatlar ichida eng yuqori",
-    note: "XVF WEO, 2025-oktabr",
-  },
-  {
-    value: 110.4,
-    prefix: "¥",
-    suffix: " trln",
-    decimals: 1,
-    label: "Eksport — 1979-yildan beri eng yuqori (rekord)",
-    note: "Moliya vazirligi, 2025",
-  },
-  {
-    value: 42.7,
-    suffix: " mln",
-    decimals: 1,
-    label: "Xorijiy sayyohlar — rekord, ¥9,5 trln sarfladi",
-    note: "JNTO, 2025",
-  },
-  {
-    value: 70,
-    prefix: "~",
-    suffix: "%",
-    label: "Xizmatlar sohasining YaIMdagi ulushi (sanoat ~29%, qishloq xo‘jaligi ~1%)",
-    note: "Jahon banki",
+    label: "Inflyatsiya — narxlar deyarli o‘zgarmaydi",
+    note: "XVF WEO, 2026-oktabr (2025)",
   },
 ]
 
 export const LADDER = [
   {
-    year: "1945",
-    title: "Vayronadan boshlanish",
-    text: "Urush shaharlar va zavodlarni vayron qildi. AQSh ishg‘oli davrida yer islohoti o‘tkazildi, yirik oilaviy konsernlar (dzaybatsu) tarqatildi.",
+    year: "1291",
+    title: "Ittifoq tug‘ildi",
+    text: "Uri, Shvits va Untervalden «Federal xartiya»ni imzolab, bir-birini himoya qilishga qasamyod qildi. 1-avgust hozir ham milliy bayram.",
   },
   {
-    year: "1964",
-    title: "Shinkansen va Olimpiada",
-    text: "Tezyurar Tokaido Shinkansen ochildi, Tokio Olimpiadasi o‘tdi, Yaponiya OECDga kirdi. 1955–1973: yiliga ~9% o‘sish — «yapon mo‘jizasi».",
+    year: "1815",
+    title: "Doimiy betaraflik",
+    text: "Vena kongressi Shveytsariyaning betarafligini tan oldi. Urushlardan chetda qolish — kapital va ishonch uchun eng yaxshi reklama bo‘ldi.",
   },
   {
-    year: "1968",
-    title: "Dunyoda ikkinchi",
-    text: "Yaponiya G‘arbiy Germaniyani ortda qoldirib, kapitalistik dunyoning 2-yirik iqtisodiyotiga aylandi va bu o‘rinni 2010-yilgacha saqladi.",
+    year: "1848",
+    title: "Federal davlat va yagona bozor",
+    text: "Yangi konstitutsiya kantonlar orasidagi ichki bojlarni bekor qildi. 1850-yilda yagona valyuta — Shveytsariya franki joriy etildi.",
   },
   {
-    year: "1989",
-    title: "Pufak cho‘qqisi",
-    text: "Nikkei indeksi 38 916 punktga chiqdi, yer narxlari osmonga ko‘tarildi. 1985-yilgi Plaza kelishuvidan so‘ng arzon kredit «pufak»ni shishirdi.",
+    year: "1934",
+    title: "Bank siri",
+    text: "Bank qonuni mijoz ma’lumotini oshkor qilishni jinoyat deb belgiladi. Shveytsariya dunyoning «seyfi»ga aylandi; 2017-yildan xorij bilan avtomatik axborot almashinuvi boshlandi.",
   },
   {
-    year: "2013",
-    title: "Abenomika",
-    text: "Bosh vazir Abe Shinzo «uch o‘q» siyosatini boshladi: pul-kredit yumshatish, davlat xarajatlari va tarkibiy islohotlar. Maqsad — deflyatsiyadan chiqish.",
+    year: "2015",
+    title: "Frank zarbasi",
+    text: "15-yanvar: Milliy bank (SNB) evroga nisbatan 1,20 minimal kursni bekor qildi. Frank bir kunda keskin qimmatladi, stavka −0,75% ga tushirildi.",
   },
   {
-    year: "2024",
-    title: "Uyg‘onish",
-    text: "Nikkei 34 yildan so‘ng 1989-yil cho‘qqisini yangiladi, Yaponiya Banki manfiy foizni bekor qildi. 2026: Nikkei 70 000 dan oshdi.",
-  },
-]
-
-/** Real YaIM o‘rtacha yillik o‘sishi, %. Kabinet idorasi (Naikakufu). */
-export const ERAS = [
-  { period: "1956–1973", name: "Yuqori o‘sish davri", value: 9.1 },
-  { period: "1974–1990", name: "Barqaror o‘sish davri", value: 4.2 },
-  { period: "1991–2024", name: "Past o‘sish davri", value: 0.8, approx: true },
-]
-
-export const LOST = [
-  {
-    title: "Pufak yorildi",
-    period: "1990–1992",
-    text: "Aksiya va yer narxlari qulab tushdi: Nikkei ikki yil ichida 60% dan ko‘proq arzonladi.",
+    year: "2023",
+    title: "Credit Suisse qulashi",
+    text: "167 yillik bank inqirozga uchradi; hukumat ko‘magida UBS uni 3 mlrd frankka sotib oldi. Natijada YaIMdan ham katta bitta mega-bank qoldi.",
   },
   {
-    title: "Yomon qarzlar",
-    period: "1990-yillar",
-    text: "Banklar qaytmaydigan kreditlarga botdi, «zombi» kompaniyalar sun’iy tirik saqlandi. 1997-yilda Yamaichi Securities bankrot bo‘ldi.",
-  },
-  {
-    title: "Deflyatsiya",
-    period: "1998–2012",
-    text: "Narxlar o‘smadi, aksincha tushdi. Odamlar xaridni kechiktirdi, kompaniyalar ish haqini oshirmadi — iqtisodiyot joyida qotdi.",
+    year: "2026",
+    title: "Yevropa bilan yangi paket",
+    text: "2-mart: Shveytsariya va Yevropa Ittifoqi yangi kelishuvlar paketini imzoladi. Endi parlament muhokamasi, ehtimol, referendum kutilmoqda.",
   },
 ]
 
-export const ARROWS = [
+/** Real YaIMning o‘rtacha yillik o‘sishi, %. XVF WEO, 2026-oktabr (yillik ma’lumotlardan hisoblangan). */
+export const ERAS: { period: string; name: string; value: number; approx?: boolean }[] = [
+  { period: "1980–1990", name: "Sovuq urush oxiri", value: 2.5 },
+  { period: "1991–2007", name: "Turg‘unlik va tiklanish", value: 1.6 },
+  { period: "2008–2025", name: "Inqirozlar davri", value: 1.8 },
+]
+
+/** Frank tarixidagi uch burilish. SNB. */
+export const FRANC = [
   {
-    n: "一",
-    title: "Pul-kredit siyosati",
-    text: "Yaponiya Banki pul massasini keskin oshirdi (2013), 2016-yildan manfiy foiz stavkasi.",
+    title: "Minimal kurs: 1,20",
+    period: "2011-sentabr",
+    text: "Evro inqirozida investorlar frankka yopirildi. SNB «1 evro kamida 1,20 frank turadi» deb e’lon qildi va buning uchun cheksiz valyuta sotib oldi.",
   },
   {
-    n: "二",
-    title: "Moliyaviy rag‘bat",
-    text: "Davlat investitsiyalari va infratuzilma dasturlari talabni qo‘llab-quvvatladi.",
+    title: "Frank zarbasi",
+    period: "2015-yanvar",
+    text: "Chegara bekor qilindi, frank bir kunda keskin qimmatladi. Stavka −0,75% gacha tushdi va 2022-yilgacha manfiy bo‘lib qoldi.",
   },
   {
-    n: "三",
-    title: "Tarkibiy islohotlar",
-    text: "Ayollar bandligi, CPTPP savdo kelishuvi, korporativ boshqaruv qoidalari.",
+    title: "Yana nol",
+    period: "2025–2026",
+    text: "Inflyatsiya deyarli nol bo‘lgani uchun SNB 2025-yil iyunida stavkani 0% ga tushirdi va 2026-yil sentabrida ham o‘zgartirmadi.",
+  },
+]
+
+/** Pensiya tizimining uch ustuni. Federal ijtimoiy sug‘urta idorasi (BSV/OFAS). */
+export const PILLARS = [
+  {
+    n: "I",
+    title: "Davlat pensiyasi (AHV)",
+    text: "1948-yildan. Har bir ishlovchi va ish beruvchi badal to‘laydi — asosiy yashash minimumini kafolatlaydi.",
+  },
+  {
+    n: "II",
+    title: "Kasbiy pensiya (BVG)",
+    text: "1985-yildan majburiy. Har bir xodim uchun ish joyidagi fondda shaxsiy jamg‘arma yig‘iladi.",
+  },
+  {
+    n: "III",
+    title: "Shaxsiy jamg‘arma",
+    text: "Ixtiyoriy, lekin soliq imtiyozi bilan rag‘batlantiriladi — odamlar o‘zi qo‘shimcha yig‘adi.",
   },
 ]
 
 export const SECTORS = [
   {
-    name: "Avtomobilsozlik",
-    jp: "自動車",
-    text: "Toyota 2020-yildan beri dunyoda eng ko‘p avtomobil sotadigan kompaniya. Avtomobillar — Yaponiya eksportining eng yirik moddasi.",
-    makers: "Toyota · Honda · Nissan · Suzuki · Mazda",
+    name: "Farmatsevtika va kimyo",
+    accent: "Pharma",
+    text: "2025-yilda kimyo-farma eksporti 152 mlrd frankka yetdi — jami eksportning 53% i. Bazel — Roche va Novartis vatani, dunyoning eng yirik hayot fanlari markazlaridan biri.",
+    makers: "Roche · Novartis · Lonza · Givaudan",
   },
   {
-    name: "Yarimo‘tkazgich materiallari",
-    jp: "半導体",
-    text: "Dunyo kremniy plastinalarining katta qismi yapon kompaniyalarida. TSMC Kumamoto zavodi 2024-yilda ochildi, Rapidus 2 nm chip ustida ishlamoqda.",
-    makers: "Shin-Etsu · SUMCO · Tokyo Electron",
+    name: "Soatsozlik",
+    accent: "Horlogerie",
+    text: "2025-yilda 25,6 mlrd frank soat eksport qilindi. Eng yirik bozor — AQSh (17%). Kuchli frank va bojlar tufayli sotuv ikki yil ketma-ket ozgina kamaydi.",
+    makers: "Rolex · Swatch Group · Patek Philippe · Richemont",
   },
   {
-    name: "Robototexnika",
-    jp: "ロボット",
-    text: "Dunyodagi sanoat robotlarining 38% i Yaponiyada ishlab chiqariladi — mamlakat bu sohada birinchi.",
-    makers: "FANUC · Yaskawa · Kawasaki · Nachi · Epson",
+    name: "Bank va sug‘urta",
+    accent: "Banken",
+    text: "Shveytsar banklari chet elliklarning 2,9 trln frank boyligini boshqaradi (2025). 2025-yilda bu sohada Gonkong ilk bor biroz o‘zib ketdi — raqobat kuchaymoqda.",
+    makers: "UBS · Zurich · Swiss Re · Julius Bär",
   },
   {
-    name: "Elektronika va kontent",
-    jp: "電子",
-    text: "Kamera sensorlari, o‘yin konsollari, anime va o‘yinlar — butun dunyoga sotiladigan madaniy eksport.",
-    makers: "Sony · Nintendo · Panasonic · Canon",
+    name: "Oziq-ovqat va mashinasozlik",
+    accent: "Industrie",
+    text: "Nestlé — dunyodagi eng yirik oziq-ovqat kompaniyasi. ABB elektrotexnika, Schindler lift va eskalatorlar bilan butun dunyoga tanilgan.",
+    makers: "Nestlé · Lindt · ABB · Schindler",
   },
 ]
 
+/** Shveytsar modelining to‘rt kaliti. `word` — asl tildagi atama, `lang` — tili. */
 export const FLASHCARDS = [
   {
-    kanji: "改善",
-    romaji: "Kaizen",
-    meaning: "Doimiy takomillashtirish",
-    text: "Har bir ishchi har kuni kichik yaxshilanish taklif qiladi. Toyota ishlab chiqarish tizimining asosi.",
+    word: "Berufs\u00adlehre",
+    lang: "Nemischa · dual ta’lim",
+    meaning: "Ikki yo‘lli kasb ta’limi",
+    text: "Yoshlarning qariyb uchdan ikki qismi maktabdan keyin kasb ta’limini tanlaydi: haftaning ko‘p qismi korxonada, qolgani kollejda (SERI).",
   },
   {
-    kanji: "看板",
-    romaji: "Kanban · JIT",
-    meaning: "Aynan o‘z vaqtida",
-    text: "Detal faqat kerak bo‘lganda keltiriladi. Ombor xarajati kamayadi, isrof yo‘qoladi.",
+    word: "Démocratie directe",
+    lang: "Fransuzcha · referendum",
+    meaning: "To‘g‘ridan-to‘g‘ri demokratiya",
+    text: "Fuqarolar yiliga bir necha marta soliq, pensiya va xalqaro kelishuvlar bo‘yicha o‘zi ovoz beradi. Siyosat sekin, lekin oldindan aytib bo‘ladigan bo‘ladi.",
   },
   {
-    kanji: "系列",
-    romaji: "Keiretsu",
-    meaning: "Kompaniyalar zanjiri",
-    text: "Bank, zavod va yetkazib beruvchilar bir-birining aksiyasiga egalik qilib, uzoq yillar hamkorlik qiladi.",
+    word: "Federalismo",
+    lang: "Italyancha · kantonlar",
+    meaning: "Kantonlar raqobati",
+    text: "26 kanton o‘z soliq stavkasini belgilaydi va kompaniyalarni jalb qilish uchun bir-biri bilan raqobatlashadi.",
   },
   {
-    kanji: "終身雇用",
-    romaji: "Shūshin koyō",
-    meaning: "Umrbod ish",
-    text: "Xodim bir kompaniyada nafaqagacha ishlaydi: sadoqat va malaka oshadi, lekin mehnat bozori sekin o‘zgaradi.",
+    word: "Schulden\u00adbremse",
+    lang: "Nemischa · byudjet qoidasi",
+    meaning: "Qarz tormozi",
+    text: "2003-yildan federal byudjet iqtisodiy sikl davomida daromaddan ko‘p sarflay olmaydi. Shuning uchun davlat qarzi past.",
   },
 ]
 
+/** Kompaniya va uning shtab-kvartirasi joylashgan shahar. */
 export const MAKERS = [
-  ["トヨタ", "Toyota"],
-  ["ソニー", "Sony"],
-  ["任天堂", "Nintendo"],
-  ["ホンダ", "Honda"],
-  ["日立", "Hitachi"],
-  ["ファナック", "FANUC"],
-  ["安川電機", "Yaskawa"],
-  ["キーエンス", "Keyence"],
-  ["東京エレクトロン", "Tokyo Electron"],
-  ["信越化学", "Shin-Etsu"],
-  ["パナソニック", "Panasonic"],
-  ["三菱", "Mitsubishi"],
-  ["キヤノン", "Canon"],
-  ["デンソー", "Denso"],
-  ["ユニクロ", "Uniqlo"],
-  ["ソフトバンク", "SoftBank"],
+  ["Nestlé", "Vevey"],
+  ["Roche", "Bazel"],
+  ["Novartis", "Bazel"],
+  ["UBS", "Tsyurix"],
+  ["Rolex", "Jeneva"],
+  ["Swatch", "Biel"],
+  ["Omega", "Biel"],
+  ["Patek Philippe", "Jeneva"],
+  ["ABB", "Tsyurix"],
+  ["Lindt", "Kilxberg"],
+  ["Swiss Re", "Tsyurix"],
+  ["Zurich", "Tsyurix"],
+  ["Logitech", "Lozanna"],
+  ["Schindler", "Ebikon"],
+  ["Givaudan", "Vernye"],
+  ["Victorinox", "Ibax"],
 ]
 
-/** IFR World Robotics 2025 (2024 yil ma’lumotlari). */
-export const ROBOT_STATS = [
-  { value: 38, suffix: "%", label: "Dunyo sanoat robotlari ishlab chiqarishidagi ulushi", note: "2024 · 1-o‘rin" },
-  { value: 44500, label: "2024-yilda o‘rnatilgan yangi robotlar", note: "dunyoda 2-bozor" },
-  { value: 450500, label: "Hozir ishlab turgan sanoat robotlari", note: "2024" },
-  { value: 446, label: "Har 10 000 ishchiga to‘g‘ri keladigan robot", note: "dunyoda 4-o‘rin" },
+export const INNOVATION_STATS = [
+  { value: 16, suffix: " yil", label: "Global innovatsiya indeksida ketma-ket 1-o‘rin", note: "WIPO GII 2026 · 139 davlat" },
+  { value: 1096, label: "Har 1 mln aholiga Yevropa patent arizalari", note: "EPO 2025 · yirik davlatlar ichida 1-o‘rin" },
+  { value: 3.22, suffix: "%", decimals: 2, label: "YaIMning ilmiy tadqiqotlarga (R&D) sarflanadigan ulushi", note: "FSO, 2023 · 25,9 mlrd CHF" },
+  { value: 70, prefix: "~", suffix: "%", label: "R&D xarajatining xususiy kompaniyalar ulushi (18 mlrd CHF)", note: "FSO, 2023" },
 ]
 
-export const ROBOT_TIMELINE = [
-  { year: "1969", name: "Kawasaki-Unimate 2000", text: "Yaponiyaning birinchi sanoat roboti" },
-  { year: "1973", name: "WABOT-1", text: "Vaseda universiteti: dunyodagi ilk to‘liq o‘lchamli insonsimon robot" },
-  { year: "1980", name: "«Robot yili»", text: "Robotlar zavodlarga ommaviy kirib keldi" },
-  { year: "2000", name: "ASIMO", text: "Honda: yuradigan va zinadan chiqadigan robot" },
-  { year: "2014", name: "Pepper", text: "SoftBank: odam kayfiyatini taniydigan xizmat roboti" },
-  { year: "2020+", name: "Parvarish robotlari", text: "Qariyalar uylari, omborlar va restoranlarda" },
+export const INVENTIONS = [
+  { year: "1867", name: "Bolalar ozuqasi", text: "Henri Nestlé — bugungi Nestlé kompaniyasining boshlanishi" },
+  { year: "1908", name: "Sellofan", text: "Jak Brandenberger ixtiro qilgan shaffof plyonka" },
+  { year: "1955", name: "Velkro (yopishqoq lenta)", text: "Jorj de Mestral patenti — tog‘ o‘simligi tikanidan ilhom" },
+  { year: "1983", name: "Swatch", text: "Arzon plastik soat — Yaponiya kvars raqobatidan soatsozlikni qutqardi" },
+  { year: "1989", name: "World Wide Web", text: "Jenevadagi CERN laboratoriyasida tug‘ilgan internet sahifalari" },
+  { year: "2016", name: "Gotthard tunneli", text: "57 km — dunyodagi eng uzun temir yo‘l tunneli" },
 ]
 
-export const ROBOT_CHAIN = [
-  { title: "Aholi qariydi", figure: "29,6%", note: "aholi 65 yoshdan katta (2026)" },
-  { title: "Ishchi qo‘l kamayadi", figure: "~11 mln", note: "ishchi 2040-yilgacha yetishmaydi" },
-  { title: "Robot joriy etiladi", figure: "446", note: "robot har 10 000 ishchiga" },
-  { title: "Unumdorlik o‘sadi", figure: "1 531", note: "robot / 10 000 — avtosanoatda (2023)" },
-  { title: "Eksport va o‘sish", figure: "38%", note: "dunyo robotlari Yaponiyadan" },
+export const INNOVATION_CHAIN = [
+  { title: "Xomashyo yo‘q", figure: "0", note: "dengiz, neft va gaz yo‘q" },
+  { title: "Bilimga tikiladi", figure: "2/3", note: "yoshlar kasb ta’limini tanlaydi" },
+  { title: "Tadqiqotga pul", figure: "3,22%", note: "YaIMdan R&D ga (2023)" },
+  { title: "Ixtiro va patent", figure: "1 096", note: "patent / 1 mln aholi (2025)" },
+  { title: "Qimmat eksport", figure: "287 mlrd", note: "CHF eksport, rekord (2025)" },
 ]
 
-export const ROBOT_WHY = [
+export const INNOVATION_WHY = [
   {
-    title: "Mehnat taqchilligini yopadi",
-    text: "Qurilish, logistika, parvarish — ishchi topilmaydigan sohalarda robot ishni to‘xtatmaydi.",
+    title: "Qimmat frankka bardosh beradi",
+    text: "Noyob dori yoki aniq mexanizmni narxi qimmat bo‘lsa ham sotib olishadi — innovatsiya kuchli valyutadan himoya qiladi.",
   },
   {
-    title: "O‘zi eksport tarmog‘i",
-    text: "Yapon robotlarining to‘rtdan uch qismidan ko‘prog‘i chet elga sotiladi — valyuta tushumi manbai.",
+    title: "Yuqori ish haqi",
+    text: "Mahsulot qimmat sotilgani uchun kompaniyalar dunyodagi eng yuqori maoshlardan birini to‘lay oladi.",
   },
   {
-    title: "Sifat va raqobatbardoshlik",
-    text: "Avtosanoatda har 10 000 ishchiga 1 531 robot: xato kam, tannarx past, sifat yuqori.",
+    title: "Xalqaro shtab-kvartiralar",
+    text: "Google AQShdan tashqaridagi eng yirik muhandislik markazlaridan birini Tsyurixda ochgan; yuzlab global kompaniyalarning Yevropa markazi shu yerda.",
   },
   {
-    title: "Qariyalar parvarishi",
-    text: "Hukumat parvarish robotlarini subsidiyalaydi: PARO terapevtik roboti, HAL ekzoskeleti.",
+    title: "Universitet → startap",
+    text: "ETH Tsyurix va EPFL Lozanna laboratoriyalaridan chiqqan deep-tech startaplar aholi jon boshiga yirik davlatlar ichida eng ko‘p (GII 2026).",
   },
 ]
 
-/** 65 va undan katta yoshdagilar ulushi, %. Statistika byurosi; 2040/2070 — IPSS prognozi (2023). */
+/** 65 va undan katta yoshdagilar ulushi, %. Jahon banki (BMT ma’lumotlari); 2055 — FSO prognozi (2025). */
 export const AGING = [
-  { year: 1950, value: 4.9 },
-  { year: 1970, value: 7.1 },
-  { year: 1990, value: 12.1 },
-  { year: 2010, value: 23.0 },
-  { year: 2026, value: 29.6 },
-  { year: 2040, value: 34.8, projected: true },
-  { year: 2070, value: 38.7, projected: true },
+  { year: 1960, value: 10.2 },
+  { year: 1980, value: 13.9 },
+  { year: 2000, value: 15.3 },
+  { year: 2010, value: 16.8 },
+  { year: 2024, value: 20.0 },
+  { year: 2055, value: 25.0, projected: true },
 ]
 
-/** Davlat yalpi qarzi, YaIMga nisbatan %. XVF WEO 2025-oktabr, 2025 bahosi (yaxlitlangan). */
+/** Davlat yalpi qarzi, YaIMga nisbatan %. XVF WEO 2026-oktabr, 2025 bahosi (yaxlitlangan). */
 export const DEBT = [
-  { country: "Yaponiya", code: "jp", value: 230, focus: true },
+  { country: "Yaponiya", code: "jp", value: 205 },
   { country: "Italiya", code: "it", value: 137 },
-  { country: "AQSh", code: "us", value: 125 },
+  { country: "AQSh", code: "us", value: 124 },
   { country: "Fransiya", code: "fr", value: 116 },
-  { country: "Buyuk Britaniya", code: "gb", value: 103 },
-  { country: "Germaniya", code: "de", value: 64 },
+  { country: "Buyuk Britaniya", code: "gb", value: 102 },
+  { country: "Germaniya", code: "de", value: 63 },
+  { country: "Shveytsariya", code: "ch", value: 40, focus: true },
 ]
 
 export const PROBLEMS = [
   {
-    figure: "686 ming",
-    title: "Tug‘ilish rekord darajada kam",
-    text: "2024-yilda tug‘ilganlar tarixda ilk bor 700 mingdan kam bo‘ldi. Aholi 2008-yildagi 128 mln cho‘qqidan beri kamaymoqda.",
+    figure: "39% → 15%",
+    title: "AQSh bojlari",
+    text: "2025-yil avgustida AQSh Shveytsariya tovarlariga 39% boj qo‘ydi — Yevropadagi eng yuqori stavka; noyabrdagi kelishuv bilan u 15% ga tushdi. 2026-yil fevralida AQSh Oliy sudi bu bojlarni bekor qildi, lekin boj siyosati hamon noaniq — doimiy savdo bitimi bo‘yicha muzokaralar davom etmoqda.",
   },
   {
-    figure: "~162 ¥",
-    title: "Zaif yen",
-    text: "2024-yil iyulda 1 dollar ~162 yen turdi — 1986-yildan beri eng zaif. Energiya va oziq-ovqat importi qimmatladi.",
+    figure: "0%",
+    title: "Juda kuchli frank",
+    text: "Inqiroz bo‘lsa, pul frankka qochadi — u qimmatlaydi va eksportchilar zarar ko‘radi. Narxlar deyarli o‘smagani uchun SNB stavkasi 2025-yil iyunidan beri 0%.",
   },
 ]
 
 export const FUTURE = [
   {
-    tag: "Jamiyat 5.0",
-    title: "Jamiyat 5.0: inson markazli aqlli jamiyat",
-    text: "Sun’iy intellekt, IoT va robotlar kundalik hayotga — hukumatning uzoq muddatli strategiyasi.",
+    tag: "YeI",
+    title: "Yevropa bilan yangi paket",
+    text: "2026-yil 2-martda imzolangan kelishuvlar: Yevropa ichki bozoriga, elektr energiyasi va sog‘liqni saqlash sohalariga kirish. Parlament ma’qullashi kerak.",
   },
   {
-    tag: "Chiplar",
-    title: "Yarimo‘tkazgichlarning qaytishi",
-    text: "TSMC Kumamoto zavodi (2024) va Rapidus: Hokkaidoda 2 nm chiplar, ommaviy ishlab chiqarish rejasi — 2027.",
+    tag: "AQSh",
+    title: "AQSh bilan savdo bitimi",
+    text: "2025-yil noyabridagi kelishuvda shveytsar kompaniyalari AQShga 200 mlrd dollar investitsiya va’da qildi. Asosiy maqsad — doimiy va oldindan aytib bo‘ladigan past boj.",
   },
   {
-    tag: "Turizm",
-    title: "Turizm: 42,7 mln mehmon",
-    text: "2025-yilda sayyohlar ¥9,5 trln sarfladi — turizm avtomobildan keyingi eng yirik «eksport»lardan biriga aylandi.",
+    tag: "Sun’iy intellekt",
+    title: "Ochiq sun’iy intellekt",
+    text: "ETH va EPFL 2025-yilda ochiq til modeli Apertus’ni chiqardi. Deep-tech startaplar soni bo‘yicha (aholi jon boshiga) yirik davlatlar ichida birinchi.",
   },
   {
-    tag: "GX",
-    title: "GX — yashil transformatsiya",
-    text: "10 yil ichida ¥150 trln davlat va xususiy investitsiya — vodorod, atom, qayta tiklanuvchi energiya.",
+    tag: "Energiya",
+    title: "Energiya strategiyasi 2050",
+    text: "2024-yilda xalq referendumda quyosh, shamol va gidroenergiyani kengaytiruvchi elektr qonunini ma’qulladi.",
   },
   {
-    tag: "Foiz",
-    title: "Deflyatsiya ortda qoldi",
-    text: "Narxlar va ish haqi o‘smoqda; 2026-yilda Yaponiya Banki stavkasi 1995-yildan beri eng yuqori darajaga chiqdi.",
+    tag: "Hayot fanlari",
+    title: "Hayot fanlari va farma",
+    text: "Roche va Novartis global kengaymoqda, Bazel va Jeneva klasterlari esa yangi dori va biotexnologiyalarga tikmoqda.",
   },
 ]
 
 export const CONCLUSIONS = [
-  "Tabiiy resursi kam mamlakat bilim, intizom va texnologiya hisobiga dunyoning yetakchi iqtisodiyotlaridan biriga aylandi.",
-  "1991-yildan keyingi turg‘unlik — aktiv pufagi va deflyatsiya qanchalik xavfli ekanini ko‘rsatgan saboq.",
-  "Qariyotgan jamiyatda robotlar — o‘yinchoq emas, balki o‘sishni saqlab qolishning iqtisodiy zarurati.",
+  "Dengizi va qazilma boyligi yo‘q tog‘li mamlakat bilim, aniqlik va ishonch hisobiga dunyoning eng boy iqtisodiyotlaridan biriga aylandi.",
+  "Barqarorlik — eng katta kapital: betaraflik, past qarz va kuchli frank pulni jalb qiladi, lekin eksportchilarga bosim beradi.",
+  "O‘zbekiston uchun saboq: dual kasb ta’limi, innovatsiya va institutlarga ishonch — tabiiy boylikdan ham muhimroq.",
 ]
 
 export const SOURCES = [
-  "XVF (IMF) — World Economic Outlook, 2025-aprel va 2025-oktabr",
-  "IFR — World Robotics 2025 (Industrial Robots)",
-  "JARA — Yaponiya Robot Assotsiatsiyasi, 2025 choraklik statistikasi",
-  "Yaponiya Ichki ishlar va aloqa vazirligi / Statistika byurosi, 2026-sentabr",
-  "IPSS — Yaponiya aholisi prognozi, 2023",
-  "Kabinet idorasi (Naikakufu) — milliy hisoblar",
-  "Moliya vazirligi — savdo statistikasi, 2025",
-  "JNTO — xorijiy mehmonlar statistikasi, 2025",
-  "Fuji surati — Unsplash (Unsplash litsenziyasi); bayroqlar — circle-flags (MIT)",
-  "Recruit Works Institute — «Future Predictions 2040», 2023",
-  "Yaponiya Banki; Nikkei",
+  "XVF (IMF) — World Economic Outlook, 2026-oktabr (YaIM, qarz, o‘sish, inflyatsiya)",
+  "BAZG — Shveytsariya bojxonasi, tashqi savdo statistikasi, 2025",
+  "FH — Shveytsariya soat sanoati federatsiyasi, eksport 2025",
+  "SECO — mehnat bozori statistikasi, 2025",
+  "FSO / BFS — Federal statistika idorasi: aholi 2025, R&D 2023, prognoz 2025–2055",
+  "SNB — Shveytsariya Milliy banki, pul-kredit siyosati, 2026-sentabr",
+  "WIPO — Global Innovation Index 2026",
+  "EPO — Patent Index 2025",
+  "SBA — Swiss Bankers Association, Banking Barometer 2026; BCG Global Wealth 2026",
+  "SERI / SBFI — kasb ta’limi; BSV — pensiya tizimi",
+  "Yevropa Ittifoqi bilan kelishuvlar — Shveytsariya Tashqi ishlar vazirligi (EDA), 2026",
+  "AQSh bojlari — USTR (2025-noyabr kelishuvi); AQSh Oliy sudi, Learning Resources v. Trump (2026-fevral)",
+  "O‘zbekiston: Statistika qo‘mitasi (2025, o‘sish 7,7%)",
+  "Matterhorn surati — Roy Egloff, Wikimedia Commons (CC BY-SA 4.0); bayroqlar — circle-flags (MIT)",
 ]

@@ -10,9 +10,9 @@ const STOPS = LADDER.map((_, i) => ((i + 0.5) / N).toFixed(3)).join(",")
 
 /**
  * The numeric ladder (scroll-web.md): a pinned stage whose year steps
- * 1945 → 2024 as the stage scrubs. Behind the year, every era is a drop:
+ * 1291 → 2026 as the stage scrubs. Behind the year, every era is a ring:
  * each new one pushes the earlier rings outward (area-preserving), and the
- * newest is always the darkest.
+ * newest is always the strongest — like growth rings in an Alpine larch.
  */
 export function History() {
   const stageRef = useRef<HTMLDivElement>(null)
@@ -37,13 +37,13 @@ export function History() {
 
   return (
     <section id="tarix" aria-label="Tarix">
-      <div ref={stageRef} data-stop data-stops={STOPS} className="stage h-[560svh]">
+      <div ref={stageRef} data-stop data-stops={STOPS} className="stage h-[640svh]">
         <div className="stage__pin bg-paper">
           <div className="wrap-page flex h-full flex-col pt-16 pb-10 lg:pt-10">
             <div className="flex items-baseline justify-between gap-6">
-              <h2 className="text-[clamp(1.6rem,2.4vw,2.3rem)] font-light text-depth">Vayronadan mo‘jizagacha</h2>
+              <h2 className="text-[clamp(1.6rem,2.4vw,2.3rem)] font-light text-depth">Ittifoqdan bank markazigacha</h2>
               <span className="tnum text-sm text-dilute">
-                1945 → <span className="text-depth">{year}</span>
+                1291 → <span className="text-depth">{year}</span>
               </span>
             </div>
 
@@ -59,10 +59,10 @@ export function History() {
                     </filter>
                     {/* The newest drop: dye that is densest at the centre and feathers out, no drawn edge */}
                     <radialGradient id="now-drop">
-                      <stop offset="0" stopColor="var(--color-ink)" stopOpacity="0.26" />
-                      <stop offset="0.55" stopColor="var(--color-ink)" stopOpacity="0.16" />
-                      <stop offset="0.85" stopColor="var(--color-ink)" stopOpacity="0.07" />
-                      <stop offset="1" stopColor="var(--color-ink)" stopOpacity="0" />
+                      <stop offset="0" stopColor="var(--color-seal)" stopOpacity="0.2" />
+                      <stop offset="0.55" stopColor="var(--color-seal)" stopOpacity="0.12" />
+                      <stop offset="0.85" stopColor="var(--color-seal)" stopOpacity="0.05" />
+                      <stop offset="1" stopColor="var(--color-seal)" stopOpacity="0" />
                     </radialGradient>
                   </defs>
                   <g filter="url(#ink-edge)">
@@ -84,7 +84,7 @@ export function History() {
                                 key={j}
                                 r={k === 0 && j === 0 ? 104 : 96 * (f || 1)}
                                 fill={k === 0 && j === 0 ? "url(#now-drop)" : "none"}
-                                stroke={k === 0 && j === 0 ? "none" : k === 0 ? "var(--color-ink)" : "var(--color-dilute)"}
+                                stroke={k === 0 && j === 0 ? "none" : k === 0 ? "var(--color-seal)" : "var(--color-dilute)"}
                                 strokeOpacity={(k === 0 ? 0.7 : 0.55 - age * 0.35) * (j === 0 ? 1 : 0.5)}
                                 strokeWidth={j === 0 ? 1.4 : 0.8}
                                 vectorEffect="non-scaling-stroke"
@@ -141,19 +141,19 @@ export function History() {
       <div data-stop className="slide bg-paper py-20">
         <div className="wrap-page grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <WordRise as="h2" className="section-title text-depth" text="Uch davr, uch sur’at" />
+            <WordRise as="h2" className="section-title text-depth" text="Sekin, lekin to‘xtovsiz" />
             <p className="lede mt-8" data-rev style={delay(120)}>
-              Real YaIMning o‘rtacha yillik o‘sishi. «Mo‘jiza» yillarida iqtisodiyot har 8 yilda ikki barobar kattalashgan; 1991-yildan keyin esa deyarli joyida
-              turdi.
+              Real YaIMning o‘rtacha yillik o‘sishi. Shveytsariya hech qachon «mo‘jiza» sur’atida o‘smagan — boy mamlakat uchun 1,5–2,5% normal. Uning siri
+              tezlikda emas, deyarli hech qachon yiqilmaslikda.
             </p>
             <p className="mt-6 max-w-[40ch] text-[0.95rem] leading-relaxed text-depth" data-rev style={delay(220)}>
               <span className="mr-2 inline-block size-2 rounded-full bg-seal align-middle" aria-hidden="true" />
-              Taqqoslash uchun: O‘zbekiston iqtisodiyoti 2024-yilda 6,5% o‘sdi.
+              Taqqoslash uchun: O‘zbekiston iqtisodiyoti 2025-yilda 7,7% o‘sdi — rivojlanayotgan davlat tezroq o‘sadi.
             </p>
           </div>
           <figure>
-            <EraBars data={ERAS} reference={{ value: 6.5, label: "O‘zbekiston, 2024: 6,5%" }} />
-            <figcaption className="note mt-2">Manba: Yaponiya Kabinet idorasi, milliy hisoblar · ~ taxminiy</figcaption>
+            <EraBars data={ERAS} reference={{ value: 7.7, label: "O‘zbekiston, 2025: 7,7%" }} />
+            <figcaption className="note mt-2">Manba: XVF WEO, 2026-oktabr (yillik ma’lumotlardan o‘rtacha); O‘zbekiston — Statistika qo‘mitasi, 2025</figcaption>
             <TableView
               caption="Real YaIM o‘sishi, davrlar bo‘yicha"
               head={["Davr", "Nomi", "O‘rtacha o‘sish"]}

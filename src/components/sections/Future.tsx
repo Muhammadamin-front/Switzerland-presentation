@@ -10,11 +10,11 @@ export function Future() {
       <AuroraBackground>
         <div data-stop className="slide wrap-page py-20">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
-            <Inscribed jp="未来">
+            <Inscribed accent="Il futuro">
               <WordRise as="h2" className="section-title text-depth" text="Yangi o‘sish manbalari" />
             </Inscribed>
             <p className="lede" data-rev style={delay(120)}>
-              Deflyatsiya ortda qoldi, narxlar va ish haqi o‘smoqda. Yaponiya chip, turizm, yashil energiya va aqlli jamiyatga tikmoqda.
+              Shveytsariya Yevropa bilan yangi kelishuv, AQSh bilan savdo bitimi, sun’iy intellekt, yashil energiya va hayot fanlariga tikmoqda.
             </p>
           </div>
 
